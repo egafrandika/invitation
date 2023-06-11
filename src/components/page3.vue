@@ -29,7 +29,7 @@
 
         <div class="pt-10 pb-10">
             <div class="relative mx-auto border-[#C38154] border-[10px] max-w-[320px] h-[580px] rounded-[200px] bg-origin-content shadow-lg shadow-slate-800">
-                <video :src="VideoMp4" autoplay muted class="object-cover h-full w-full rounded-[200px] brightness-[.3]"></video>
+                <video :src="VideoMp4" autoplay playsinline muted class="object-cover h-full w-full rounded-[200px] brightness-[.3]"/>
                 <div v-for="event in prewedding" class="absolute w-full top-0 py-6 text-center font-second-wedding text-[40px] text-[#e4c8b5]">
                     <h1>{{ event.title1 }}</h1>
                     <img :src="PohonWayang" class="w-[130px] mx-auto">
