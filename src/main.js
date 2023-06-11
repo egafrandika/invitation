@@ -3,10 +3,27 @@ import './style.css'
 import App from './App.vue'
 import VueCountdown from '@chenfengyuan/vue-countdown';
 import { OhVueIcon, addIcons } from "oh-vue-icons";
-import {BiEnvelopeOpen, GiDiamondRing, BiCalendarDate, IoTimeOutline, PrInstagram, RiDoubleQuotesL, RiDoubleQuotesR} from "oh-vue-icons/icons";
+import {BiEnvelopeOpen, 
+    GiDiamondRing, 
+    BiCalendarDate, 
+    IoTimeOutline, 
+    PrInstagram, 
+    RiDoubleQuotesL, 
+    RiDoubleQuotesR,
+    SiGooglemaps,
+    MdSlowmotionvideoSharp} from "oh-vue-icons/icons";
 import router from './router';
 
-addIcons(BiEnvelopeOpen, GiDiamondRing, BiCalendarDate, IoTimeOutline, PrInstagram, RiDoubleQuotesL, RiDoubleQuotesR);
+addIcons(
+    BiEnvelopeOpen, 
+    GiDiamondRing, 
+    BiCalendarDate, 
+    IoTimeOutline, 
+    PrInstagram, 
+    RiDoubleQuotesL, 
+    RiDoubleQuotesR,
+    SiGooglemaps,
+    MdSlowmotionvideoSharp);
 
 const app = createApp(App);
 app.component("v-icon", OhVueIcon);
