@@ -4,5 +4,15 @@
 
 @font-face {
     font-family: "second-wedding";
-    src: url("./assets/Constaller.ttf")
+    src: url("./assets/Constaller.ttf");
+}
+
+@font-face {
+    font-family: "third-wedding";
+    src: url("./assets/Katerlin.ttf");
+}
+
+@font-face {
+    font-family: "four-wedding";
+    src: url("./assets/Yasbigan.ttf");
 }

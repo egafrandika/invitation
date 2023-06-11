@@ -3,6 +3,7 @@
         <Page1/>
         <Page2/>
         <Page3/>
+        <Page4/>
     </div>
 </template>
 
@@ -10,13 +11,15 @@
 import Page1 from '../components/page1.vue';
 import Page2 from '../components/page2.vue';
 import Page3 from '../components/page3.vue';
+import Page4 from '../components/page4.vue';
 
 export default{
     name: "HomePage",
     components: {
     Page1,
     Page2,
-    Page3
+    Page3,
+    Page4
 },
 
 

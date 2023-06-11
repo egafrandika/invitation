@@ -11,7 +11,8 @@ import {BiEnvelopeOpen,
     RiDoubleQuotesL, 
     RiDoubleQuotesR,
     SiGooglemaps,
-    MdSlowmotionvideoSharp} from "oh-vue-icons/icons";
+    MdSlowmotionvideoSharp,
+    CoCalendar} from "oh-vue-icons/icons";
 import router from './router';
 
 addIcons(
@@ -23,7 +24,8 @@ addIcons(
     RiDoubleQuotesL, 
     RiDoubleQuotesR,
     SiGooglemaps,
-    MdSlowmotionvideoSharp);
+    MdSlowmotionvideoSharp,
+    CoCalendar);
 
 const app = createApp(App);
 app.component("v-icon", OhVueIcon);

@@ -13,6 +13,8 @@ export default {
       fontFamily: {
         'base-wedding': ['Elsie', 'sans-serif'],
         'second-wedding': ["second-wedding","sans"], 
+        'third-wedding': ['third-wedding'],
+        'four-wedding': ['four-wedding']
       }
     },
   },
