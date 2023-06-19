@@ -12,7 +12,11 @@ import {BiEnvelopeOpen,
     RiDoubleQuotesR,
     SiGooglemaps,
     MdSlowmotionvideoSharp,
-    CoCalendar} from "oh-vue-icons/icons";
+    CoCalendar,
+    CoWhatsapp,
+    MdKeyboardarrowupRound,
+    MdKeyboardarrowdownTwotone,
+    BiYoutube} from "oh-vue-icons/icons";
 import router from './router';
 
 addIcons(
@@ -25,7 +29,11 @@ addIcons(
     RiDoubleQuotesR,
     SiGooglemaps,
     MdSlowmotionvideoSharp,
-    CoCalendar);
+    CoCalendar,
+    CoWhatsapp,
+    MdKeyboardarrowupRound,
+    MdKeyboardarrowdownTwotone,
+    BiYoutube);
 
 const app = createApp(App);
 app.component("v-icon", OhVueIcon);

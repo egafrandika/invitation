@@ -19,7 +19,7 @@
         <div class="absolute w-full text-center right-0 bottom-0 p-20 max-sm:p-5 bg-gradient-to-t from-0% from-neutral-950 to-100%">
           <h1 class="font-base-wedding text-lg max-sm:text-[20px] text-white">Kepada Bapak/Ibu/Saudara/i</h1>
           <h1 class="font-base-wedding text-lg pt-4 pb-6 max-sm:pb-4 max-sm:pt-2 max-sm:text-[18px] text-white">Yusuf</h1>
-            <router-link to="/home-page" @click="playMusic()">
+          <router-link to="/home-page">
               <div class="p-4 max-sm:p-1.5 flex flex-row justify-center space-x-4 border-4 max-sm:border-2 border-slate-100 rounded-lg items-center max-w-[250px] max-sm:max-w-[180px] mx-auto cursor-pointer">
                 <v-icon name="bi-envelope-open" animation="ring" scale="1.5" fill="white"/>
                 <h1 class="font-serif max-sm:text-[12px] text-white">BUKA UNDANGAN</h1>
@@ -32,7 +32,6 @@
   
   <script>
   import homeImage from '../assets/home-image.jpeg';
-  import backgroundMusic from '../assets/lagujawa.mp3';
   
   export default{
     name: 'MainPage',
@@ -48,30 +47,6 @@
       goToHomePage() {
         this.$router.push('/home-page');
       },
-
-      playMusic() {
-        if (!this.isMusicPlayed) {
-          const audio = new Audio();
-          audio.src = backgroundMusic;
-          audio.loop = true;
-          // Add an event listener to pause the music when the user clicks anywhere on the document
-          const pauseMusic = () => {
-            audio.pause();
-            document.removeEventListener('click', pauseMusic);
-          };
-
-          // Play the music and add the event listener to pause it
-          audio.play().then(() => {
-            document.addEventListener('click', pauseMusic);
-          }).catch((error) => {
-            
-          // Handle autoplay error
-          console.error('Autoplay failed:', error);
-        });
-
-        this.isMusicPlayed = true;
-        }
-      }
     }
   }
   

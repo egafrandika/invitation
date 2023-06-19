@@ -10,6 +10,9 @@ export default {
       backgroundImage: {
         'image-background': "url('/asset/home-image.jpeg')",
       },
+      boxShadow: {
+        'shadow-one': '0 3px 6px 2px rgba(51, 51, 51, .3)'
+      },
       fontFamily: {
         'base-wedding': ['Elsie', 'sans-serif'],
         'second-wedding': ["second-wedding","sans"], 

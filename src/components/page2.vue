@@ -1,5 +1,10 @@
 <template>
     <div class="bg-[#0d0c0c]">
+        <div v-for="text in texts" class="w-[550px] max-sm:w-[350px] text-center mx-auto pb-5">
+            <h1 class="text-[#ddcaca] text-[50px] max-sm:text-[30px]">{{text.bismilah}}</h1>
+            <h1 class="text-[#ddcaca] text-center pt-2">{{ text.babel }}</h1>
+            <span class="text-[#ddcaca] text-center w-[200px] max-sm:text-[10px] leading-3">{{ text.description }}</span>
+        </div>
         <h1 class="text-[#ddcaca] font-serif text-center text-[40px] pb-9 pt-2">The Bride</h1>
         <div class="flex flex-row justify-center pl-6">
             <div class="border-[#C38154] border-[10px] max-w-[200px] h-[330px] max-sm:w-[340px] rounded-[200px] bg-origin-content shadow-lg shadow-slate-800">
@@ -22,8 +27,8 @@
                 </div>
             </div>
         </div>
-        <div class="pt-9 pb-9 flex space-x-2 overflow-auto">
-            <div v-for="img in images" class="flex-shrink-0">
+        <div class="pt-9 pb-9 flex space-x-2 overflow-auto snap-mandatory snap-x px-6">
+            <div v-for="img in images" class="flex-shrink-0 snap-center">
                 <img :src="img" class="w-auto h-[200px] rounded-md"/>
             </div>
         </div>
@@ -49,8 +54,8 @@
                 </div>
             </div>
         </div>
-        <div class="pt-9 pb-[50px] flex space-x-2 overflow-x-auto">
-            <div v-for="img in images" class="flex-shrink-0">
+        <div class="pt-9 pb-[50px] flex space-x-2 overflow-x-auto snap-mandatory snap-x px-6">
+            <div v-for="img in images" class="flex-shrink-0 snap-center">
                 <img :src="img" class="w-auto h-[200px] rounded-md"/>
             </div>
         </div>
@@ -73,6 +78,12 @@ export default {
     data() {
         return {
             Image1,
+            texts: [
+                {bismilah: 'بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ'},
+                {babel: 'وَ مِنۡ اٰیٰتِہٖۤ اَنۡ خَلَقَ لَکُمۡ مِّنۡ اَنۡفُسِکُمۡ اَزۡوَاجًا لِّتَسۡکُنُوۡۤا اِلَیۡہَا وَ جَعَلَ بَیۡنَکُمۡ مَّوَدَّۃً وَّ رَحۡمَۃً ؕ اِنَّ فِیۡ ذٰلِکَ لَاٰیٰتٍ لِّقَوۡمٍ یَّتَفَکَّرُوۡنَ'},
+                {description: '❝ Dan diantara tanda - tanda kekuasaan-Nya ialah diciptakan-Nya untukmu pasangan hidup dari jenismu sendiri supaya kamu mendapat ketenangan hati dan dijadikan-Nya kasih sayang diantara kamu. Sesungguhnya yang demikian itu menjadi tanda - tanda kebesaran-Nya bagi orang - orang yang berfikir.❞'}
+
+            ],
             Man: [
                 {
                     manTitle: 'Dika',

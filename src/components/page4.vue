@@ -23,8 +23,8 @@
             </div>
         </div>
 
-        <div class="text-[#ddcaca] text-center pb-10 w-[90%] mx-auto">
-            <h1 class="font-four-wedding text-[20px]">Our</h1>
+        <div class="text-[#ddcaca] text-center pb-10 pt-4 w-[90%] mx-auto">
+            <h1 class="font-four-wedding text-[20px] leading-3">Our</h1>
             <h1 class="font-four-wedding text-[35px]">Gallery</h1>
             <span class="font-four-wedding text-[15px]">Sedikit karya fotografi sebagai kenang-kenangan bagi kami berdua.</span>
         </div>
