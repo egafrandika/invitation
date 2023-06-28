@@ -16,7 +16,13 @@ import {BiEnvelopeOpen,
     CoWhatsapp,
     MdKeyboardarrowupRound,
     MdKeyboardarrowdownTwotone,
-    BiYoutube} from "oh-vue-icons/icons";
+    BiYoutube,
+    BiChatSquareText,
+    BiCheck2,
+    GiAlarmClock,
+    IoPersonCircleOutline,
+    MdKeyboardarrowdownRound,
+    MdKeyboardarrowup} from "oh-vue-icons/icons";
 import router from './router';
 
 addIcons(
@@ -33,7 +39,13 @@ addIcons(
     CoWhatsapp,
     MdKeyboardarrowupRound,
     MdKeyboardarrowdownTwotone,
-    BiYoutube);
+    BiYoutube,
+    BiChatSquareText,
+    BiCheck2,
+    GiAlarmClock,
+    IoPersonCircleOutline,
+    MdKeyboardarrowdownRound,
+    MdKeyboardarrowup);
 
 const app = createApp(App);
 app.component("v-icon", OhVueIcon);
