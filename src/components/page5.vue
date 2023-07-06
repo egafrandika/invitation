@@ -45,6 +45,19 @@
                         </div> -->
                     </div>
                 </div>
+                    <div class="text-center py-10 text-[20px] font-base-wedding">
+                        <h1>Google Map</h1>
+                    </div>
+                <div class="border-[2px] border-red-900 w-[90%] h-[400px] mx-auto shadow-lg">
+                    <iframe 
+                        :src="googleSource"
+                        style="border:0;"
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade" 
+                        class="mx-auto w-full h-full">
+                    </iframe>
+                </div>
                 <div class="text-center pt-20 font-base-wedding text-[20px] w-[300px] mx-auto">
                     <span>Konfirmasi Kehadiran Anda di Acara Pernikahan</span>
                     <h1 class="font-second-wedding text-[50px] py-2">Ega & Dika</h1>
@@ -183,6 +196,7 @@ export default {
             FooterBanner3,
             FooterBanner2,
             FooterBanner1,
+            googleSource: 'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d496.6930356973872!2d105.1847376!3d-5.1767408!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e40b73a3809a7d9%3A0xf5f4af50f81bbcaf!2sPaud%20Annisa!5e0!3m2!1sen!2sid!4v1688611002832!5m2!1sen!2si',
             pohonWayang1: 'https://www.kunika.id/wp-content/uploads/2023/02/Relik.png',
             profile: 'https://www.kunika.id/wp-content/uploads/2023/01/Your-paragraph-text.jpg',
             images: [
@@ -221,3 +235,9 @@ export default {
 }
 
 </script>
+
+<style>
+ /* iframe{
+    border-radius: 10%;
+ } */
+</style>
