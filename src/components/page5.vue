@@ -36,8 +36,8 @@
                         </div>
                         <div class="bg-[#442B1B] w-fit mx-auto rounded-lg px-4 h-fit shadow-lg cursor-pointer hover:bg-[#C38154] hover:text-black text-white"
                         >
-                            {{ gift.kirimHadiah }}
-                        </div>
+                        {{ gift.kirimHadiah }}
+                    </div>
                         <!-- <div class="bg-[#442B1B] w-fit mx-auto rounded-lg px-4 h-fit shadow-lg cursor-pointer hover:bg-[#C38154] hover:text-black text-white"
                             @click="copyToClipboard('Sidobasuki, RT/RW 021/011, Desa Bumi Agung, Kec. Tegineneng , Pesawaran, Lampung')"
                         >
@@ -95,32 +95,52 @@
                     <h1 class="font-second-wedding text-[50px] py-2">Ega & Dika</h1>
                 </div>
                 <div class="w-full max-sm:max-w-xs max-w-xl mx-auto">
-                    <form class="bg-[#b57d5b] shadow-md rounded px-8 pt-6 pb-8 md:mb-48 sm:mb-40 max-sm:mb-20">
+                    <form class="bg-[#b57d5b] shadow-md rounded px-8 pt-6 pb-8 md:mb-48 sm:mb-40 max-sm:mb-20" id="myForm">
                         <div class="flex py-2 items-center space-x-1">
                             <v-icon name="bi-chat-square-text" animation="ring" scale="1.5" fill="white"/>
-                            <h1 class="text-slate-300">24 Ucapan</h1>
+                            <div class="flex space-x-1">
+                                <h1 class="text-slate-300">{{this.record && this.record.length}}</h1>
+                                <span> Ucapan</span>
+                            </div>
                         </div>
                         <hr class="py-2">
                         <div class="mb-4">
-                            <label class="block text-gray-300 text-sm font-bold mb-2" for="nama">
+                            <label 
+                                class="block text-gray-300 text-sm font-bold mb-2" 
+                                for="nama"
+                            >
                                 Nama
                             </label>
-                            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="Nama">
+                            <input 
+                                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
+                                id="nama"
+                                type="text" 
+                                placeholder="Nama"
+                            >
                         </div>
                         <div class="mb-4">
-                            <label class="block text-gray-300 text-sm font-bold mb-2" for="ucapan">
+                            <label 
+                                class="block text-gray-300 text-sm font-bold mb-2" 
+                                for="ucapan">
                                 Ucapan
                             </label>
-                            <textarea class="rounded-[4px] w-full" id="ucapan" placeholder="Kata - Kata Ucapan..." rows="1"></textarea>
+                            <textarea 
+                                class="rounded-[4px] w-full" 
+                                id="ucapan"
+                                placeholder="Kata - Kata Ucapan..." 
+                                rows="4"></textarea>
                         </div>
                         <div class="mb-6">
-                            <label class="block text-gray-300 text-sm font-bold mb-2" for="kehadiran">
+                            <label 
+                                class="block text-gray-300 text-sm font-bold mb-2" 
+                                for="kehadiran"
+                            >
                                 Konfirmasi Kehadiran
                             </label>
                             <div>
-                                <input id="draft" class="peer/draft" type="radio" name="status" checked/>
+                                <input id="draft" class="peer/draft" type="radio" name="status" value="hadir" checked/>
                                 <label for="draft" class="peer-checked/draft:text-slate-300 px-2 font-base-wedding">Hadir</label>
-                                <input id="published" class="peer/published" type="radio" name="status" />
+                                <input id="published" class="peer/published" type="radio" name="status" value="berhalangan"/>
                                 <label for="published" class="peer-checked/published:text-slate-300 px-2 font-base-wedding">Berhalangan</label>
 
                                 <div class="hidden peer-checked/draft:block font-base-wedding pt-4 text-slate-300">Saya Datang di Acara Pernikahan.</div>
@@ -128,27 +148,38 @@
                             </div>
                         </div>
                         <div class="w-full">
-                            <button class="bg-[#4a2e1c] hover:bg-[#63412c] text-white font-bold py-2 w-full rounded focus:outline-none focus:shadow-outline" type="button">
+                            <button 
+                                class="bg-[#4a2e1c] hover:bg-[#63412c] text-white font-bold py-2 w-full rounded focus:outline-none focus:shadow-outline" 
+                                type="button"
+                                @click="retrieveFormData">
                                 Kirim
                             </button>
                         </div>
-                        <div class="w-full text-start pt-8 flex flex-row space-x-2">
-                            <div class="bg-[#4a2e1c] p-3 mt-1 max-sm:p-1 rounded-full h-fit w-fit">
-                                <img :src="profile" alt="" class="rounded-full" width="40">
+                        <div class="w-full text-start pt-8 flex flex-row space-x-2" v-for="(rec, index) in record" :key="index">
+                            <div class="bg-[#4a2e1c] p-1 mt-1 max-sm:p-1 rounded-full h-fit w-fit">
+                                <img :src="profile" alt="" class="rounded-full max-w-[20px]">
                             </div>
                             <div>
                                 <div class="flex space-x-1 items-center">
-                                    <h1 class="font-base-wedding text-[20px]">Erdi</h1>
-                                    <div class="flex bg-red-600 items-center px-[3px] rounded space-x-[1px]">
-                                        <v-icon name="bi-check2" scale="0.8" fill="white"/>
-                                        <h1 class="font-base-wedding text-[12px] text-slate-300">Hadir</h1>
-                                    </div>
+                                    <h1 class="font-base-wedding text-[20px]">{{ rec.nama }}</h1>
+                                    <template v-if="rec.kehadiran === 'hadir'">
+                                        <div class="flex bg-[#98c76b] items-center px-[3px] rounded space-x-[1px]">
+                                            <v-icon name="bi-check2" scale="0.8" fill="black"/>
+                                            <h1 class="font-base-wedding text-[12px] text-black-300">{{ rec.kehadiran}}</h1>
+                                        </div>
+                                    </template>
+                                    <template v-else>
+                                        <div class="flex bg-red-900 items-center px-[3px] rounded space-x-[1px]">
+                                            <v-icon name="pr-times" scale="0.8" fill="white"/>
+                                            <h1 class="font-base-wedding text-[12px] text-slate-300">{{ rec.kehadiran}}</h1>
+                                        </div>
+                                    </template>    
                                 </div>
                                 <div class="flex items-center space-x-1">
                                     <v-icon name="gi-alarm-clock" scale="0.8" fill="white"/>
-                                    <h1 class="text-[10px] text-slate-200 py-1">4 hari, 22 jam lalu</h1>
+                                    <h1 class="text-[10px] text-slate-200 py-1">{{ rec.timeCreated }} WIB</h1>
                                 </div>
-                                <span class="font-base-wedding max-sm:text-[12px]">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore quidem ea adipisci error veritatis qui esse vero natus nisi obcaecati!</span>
+                                <span class="font-base-wedding max-sm:text-[12px]">{{ rec.ucapan }}</span>
                             </div>
                         </div>
                         <div class="text-center cursor-pointer">
@@ -183,12 +214,14 @@ import FooterBanner1 from '../assets/footer-banner1.webp';
 import FooterBanner2 from '../assets/footer-banner2.webp';
 import FooterBanner3 from '../assets/footer-banner3.webp';
 
+import {getDatabase, ref, push, onValue} from 'firebase/database';
 
 export default {
     name: 'Page5',
 
     data() {
         return {
+            record: null,
             Image1,
             PohonWayang,
             Wayang1,
@@ -217,8 +250,12 @@ export default {
                     kirimHadiah: 'Kirim Hadiah',
                     dataAddress: 'Sidobasuki, RT/RW 021/011, Desa Bumi Agung, Kec. Tegineneng , Pesawaran, Lampung.'
                 }
-            ],
+            ]
         }
+    },
+
+    mounted() {
+        this.getData();
     },
 
     methods: {
@@ -231,13 +268,70 @@ export default {
         //     document.body.removeChild(el);
         //     window.alert('Berhasil Copy Alamat');
         // }
+
+        getData() {
+            const database = getDatabase();
+            const dataRef = ref(database, 'dataInvitation/invitationForm');
+            
+            onValue(dataRef, (snapshot) => {
+                const data = snapshot.val();
+                const records = Object.values(data).slice(0, -4)
+
+                const options = {
+                    timeZone: 'Asia/Jakarta',
+                    year: 'numeric',
+                    month: 'numeric',
+                    day: 'numeric',
+                    hour12: false,
+                    hour: '2-digit',
+                    minute: '2-digit',
+                    second: '2-digit'
+                };
+
+                this.record = records.map(record => {
+                    const timestamp = new Date(record.timeCreated);
+                    const formattedTimestamp = timestamp.toLocaleString('id-ID', options);
+                    return {
+                        ...record,
+                        timeCreated: formattedTimestamp
+                    };
+                });
+            }, {
+                onlyOnce: true
+            });
+        },
+
+        retrieveFormData() {
+            const form = document.getElementById('myForm');
+            const namaInput = document.getElementById('nama');
+            const ucapanInput = document.getElementById('ucapan');
+            const kehadiranInput = document.querySelector('input[name="status"]:checked');
+
+            const nama = namaInput.value;
+            const ucapan = ucapanInput.value;
+            const kehadiran = kehadiranInput.value === 'hadir' ? 'hadir' :  'berhalangan';
+
+            const data = {
+                nama: nama,
+                ucapan: ucapan,
+                kehadiran: kehadiran,
+                timeCreated: new Date().getTime()
+            }
+
+            const database = getDatabase();
+            const dataRef = ref(database, 'dataInvitation/invitationForm');
+
+            push(dataRef, data).then(() => {
+                console.log('data success save to firebase');
+
+                form.reset();
+            }).catch((e) => {
+                console.log('error saving data to firebase',e);
+            });
+
+            this.getData();
+        }
     }
 }
 
 </script>
-
-<style>
- /* iframe{
-    border-radius: 10%;
- } */
-</style>

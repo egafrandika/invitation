@@ -1,4 +1,7 @@
 import { createApp } from 'vue'
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+import firebaseConfig from './firebase'
 import './style.css'
 import App from './App.vue'
 import VueCountdown from '@chenfengyuan/vue-countdown';
@@ -22,7 +25,8 @@ import {BiEnvelopeOpen,
     GiAlarmClock,
     IoPersonCircleOutline,
     MdKeyboardarrowdownRound,
-    MdKeyboardarrowup} from "oh-vue-icons/icons";
+    MdKeyboardarrowup,
+    PrTimes} from "oh-vue-icons/icons";
 import router from './router';
 
 addIcons(
@@ -45,9 +49,12 @@ addIcons(
     GiAlarmClock,
     IoPersonCircleOutline,
     MdKeyboardarrowdownRound,
-    MdKeyboardarrowup);
+    MdKeyboardarrowup,
+    PrTimes);
 
 const app = createApp(App);
+initializeApp(firebaseConfig);
+getAnalytics();
 app.component("v-icon", OhVueIcon);
 app.component(VueCountdown.name, VueCountdown);
 app.use(router);
