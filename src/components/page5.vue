@@ -4,45 +4,67 @@
             <div v-for="img in images" class="relative -top-1 z-0">
                 <img :src="img" class="rotate-180 w-full absolute">
             </div>
-            <!-- <div class="pt-44 md:pt-64 pb-10">
-                <h1 class="text-center font-four-wedding text-[25px]">Transfer</h1>
-                <h1 class="text-center text-[35px] font-four-wedding ">Rejeki</h1>
-            </div>
-            <div class="flex space-x-2 overflow-auto snap-mandatory snap-x px-4">
-                <div v-for="bank in banks" class="flex-shrink-0 w-[300px] md:w-[400px] snap-center">
-                    <img :src="bank.logo" class="w-full rounded-[20px] shadow-rose-950 grayscale hover:grayscale-0">
-                    <div class="mx-auto">
-                        <div class="pt-2 flex flex-col w-fit font-mono text-center mx-auto">
-                            <h1 class="text-[20px]">{{ bank.bankname }}</h1>
-                            <h1 class="text-[20px] pb-10">{{ bank.number }}</h1>
-                        </div>
-                    </div>
-                </div>
-            </div> -->
-            <!-- <div class="pt-10 md:pt-10 pb-10">
-                <h1 class="text-center font-four-wedding text-[25px]">Kirim</h1>
-                <h1 class="text-center text-[35px] font-four-wedding ">Kado</h1>
-            </div> -->
             <div class="pt-[250px] pb-44">
                 <div class="relative mx-auto border-[#C38154] border-[10px] max-w-[320px] h-[580px] rounded-[200px] bg-origin-content shadow-lg shadow-slate-800">
                     <img :src="Image1" autoplay muted class="object-cover h-full w-full rounded-[200px] brightness-[.3]">
                     <div v-for="gift in gifts" class="absolute w-full top-0 py-2 text-center font-second-wedding text-[40px] text-[#e4c8b5]">
                         <img :src="PohonWayang" class="w-[130px] mx-auto py-3">
                         <div class="flex font-sans tracking-wider justify-center border-[2px] border-x-0 items-center">
-                            <h1 class="text-[23px] font-serif">{{ gift.title }}</h1>
+                            <h1 class="text-[23px] font-serif">{{ gift.title}}</h1>
                         </div>
                         <div class="py-8 px-2 text-[16px]">
                             <span class="font-base-wedding">{{ gift.dataAddress }}</span>
                         </div>
-                        <div class="bg-[#442B1B] w-fit mx-auto rounded-lg px-4 h-fit shadow-lg cursor-pointer hover:bg-[#C38154] hover:text-black text-white"
-                        >
+                    <div class="bg-[#442B1B] w-fit mx-auto rounded-lg px-4 h-fit shadow-lg cursor-pointer hover:bg-[#C38154] hover:text-black text-white" 
+                        data-modal-target="popup-modal" 
+                        data-modal-toggle="popup-modal"
+                    >
                         {{ gift.kirimHadiah }}
                     </div>
-                        <!-- <div class="bg-[#442B1B] w-fit mx-auto rounded-lg px-4 h-fit shadow-lg cursor-pointer hover:bg-[#C38154] hover:text-black text-white"
-                            @click="copyToClipboard('Sidobasuki, RT/RW 021/011, Desa Bumi Agung, Kec. Tegineneng , Pesawaran, Lampung')"
-                        >
-                            {{ gift.copyAddress }}
-                        </div> -->
+                    <div id="popup-modal" tabindex="-1" class="fixed top-0 left-0 right-0 z-50 hidden p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
+                        <div class="relative w-full max-w-md max-h-full">
+                            <div class="relative bg-[#C38154] rounded-lg shadow dark:bg-gray-700">
+                                <button type="button" class="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ml-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="popup-modal">
+                                    <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                                    </svg>
+                                    <span class="sr-only">Close modal</span>
+                                </button>
+                                    <div class="p-6 text-center">
+                                        <h3 class="mb-5 text-[30px] font-four-wedding text-black dark:text-gray-400 py-2">Transfer Rejeki</h3>
+                                        <div class="flex space-x-2 overflow-auto snap-mandatory snap-x px-4">
+                                            <div v-for="bank in banks" class="flex-shrink-0 w-[300px] md:w-[400px] snap-center">
+                                                <img :src="bank.logo" class="w-full rounded-[20px] shadow-rose-950 grayscale hover:grayscale-0">
+                                                <div class="mx-auto">
+                                                    <div class="pt-2 flex flex-col w-fit font-mono text-center mx-auto text-black">
+                                                        <h1 class="text-[20px]">{{ bank.bankname }}</h1>
+                                                        <h1 class="text-[20px] pb-10">{{ bank.number }}</h1>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <h1 class="text-lg font-base-wedding text-gray-200 pb-4">Sidobasuki, RT/RW 021/011, Desa Bumi Agung, Kec. Tegineneng, Pesawaran, Lampung.</h1>
+                                        </div>
+                                        <button 
+                                            type="button" 
+                                            @click="copyToClipboard('Sidobasuki, RT/RW 021/011, Desa Bumi Agung, Kec. Tegineneng , Pesawaran, Lampung')"
+                                            class="text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-lg inline-flex items-center px-5 py-2.5 text-center mr-2"
+                                        >
+                                            Copy Alamat
+                                        </button>
+                                        <button 
+                                            data-modal-hide="popup-modal" 
+                                            type="button" 
+                                            @click="copyAddress"
+                                            class="text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-200 rounded-lg border border-gray-200 text-lg font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600"
+                                        >
+                                            Tutup
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                     <div class="text-center py-10 text-[20px] font-base-wedding">
@@ -259,15 +281,15 @@ export default {
     },
 
     methods: {
-        // copyToClipboard(text) {
-        //     const el = document.createElement('textarea');
-        //     el.value = text;
-        //     document.body.appendChild(el);
-        //     el.select();
-        //     document.execCommand('copy');
-        //     document.body.removeChild(el);
-        //     window.alert('Berhasil Copy Alamat');
-        // }
+        copyToClipboard(text) {
+            const el = document.createElement('textarea');
+            el.value = text;
+            document.body.appendChild(el);
+            el.select();
+            document.execCommand('copy');
+            document.body.removeChild(el);
+            window.alert('Berhasil Copy Alamat');
+        },
 
         getData() {
             const database = getDatabase();
