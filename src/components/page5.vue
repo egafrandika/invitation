@@ -15,23 +15,23 @@
                         <div class="py-8 px-2 text-[16px]">
                             <span class="font-base-wedding">{{ gift.dataAddress }}</span>
                         </div>
-                    <div class="bg-[#442B1B] w-fit mx-auto rounded-lg px-4 h-fit shadow-lg cursor-pointer hover:bg-[#C38154] hover:text-black text-white" 
-                        data-modal-target="popup-modal" 
-                        data-modal-toggle="popup-modal"
+                    <div class="bg-[#442B1B] w-fit mx-auto rounded-lg px-4 h-fit shadow-lg cursor-pointer hover:bg-[#C38154] hover:text-black text-white" data-modal-target="popup-modal" data-modal-toggle="popup-modal"
+                        @click="openModal"
                     >
                         {{ gift.kirimHadiah }}
                     </div>
-                    <div id="popup-modal" tabindex="-1" class="fixed top-0 left-0 right-0 z-50 hidden p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
-                        <div class="relative w-full max-w-md max-h-full">
-                            <div class="relative bg-[#C38154] rounded-lg shadow dark:bg-gray-700">
-                                <button type="button" class="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ml-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="popup-modal">
-                                    <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
-                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
-                                    </svg>
-                                    <span class="sr-only">Close modal</span>
-                                </button>
+                        <div id="popup-modal" tabindex="-1" class="fixed top-0 left-0 right-0 z-50 hidden p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
+                            <div class="relative w-full max-w-md max-h-full">
+                                <div class="relative bg-[#C38154] rounded-lg shadow dark:bg-gray-700">
+                                    <button type="button" class="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ml-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="popup-modal">
+                                        <svg @click="closeModal" data-modal-target="popup-modal" data-modal-hide="popup-modal" class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                                        </svg>
+                                        <span class="sr-only">Close modal</span>
+                                    </button>
                                     <div class="p-6 text-center">
-                                        <h3 class="mb-5 text-[30px] font-four-wedding text-black dark:text-gray-400 py-2">Transfer Rejeki</h3>
+                                        <h3 class="mb-5 text-[30px] font-four-wedding text-black dark:text-gray-400">Transfer Rejeki</h3>
+
                                         <div class="flex space-x-2 overflow-auto snap-mandatory snap-x px-4">
                                             <div v-for="bank in banks" class="flex-shrink-0 w-[300px] md:w-[400px] snap-center">
                                                 <img :src="bank.logo" class="w-full rounded-[20px] shadow-rose-950 grayscale hover:grayscale-0">
@@ -43,32 +43,24 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div>
-                                            <h1 class="text-lg font-base-wedding text-gray-200 pb-4">Sidobasuki, RT/RW 021/011, Desa Bumi Agung, Kec. Tegineneng, Pesawaran, Lampung.</h1>
-                                        </div>
+                                        <h1 class="text-lg font-base-wedding text-gray-900 pb-4">Sidobasuki, RT/RW 021/011, Desa Bumi Agung, Kec. Tegineneng, Pesawaran, Lampung.</h1>
                                         <button 
-                                            type="button" 
                                             @click="copyToClipboard('Sidobasuki, RT/RW 021/011, Desa Bumi Agung, Kec. Tegineneng , Pesawaran, Lampung')"
+                                            type="button" 
                                             class="text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-lg inline-flex items-center px-5 py-2.5 text-center mr-2"
                                         >
                                             Copy Alamat
                                         </button>
-                                        <button 
-                                            data-modal-hide="popup-modal" 
-                                            type="button" 
-                                            @click="copyAddress"
-                                            class="text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-200 rounded-lg border border-gray-200 text-lg font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600"
-                                        >
-                                            Tutup
-                                        </button>
+                                        <button @click="closeModal" data-modal-hide="popup-modal" type="button" class="text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-200 rounded-lg border border-gray-200 text-lg font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600">Tutup</button>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                    <div class="text-center py-10 text-[20px] font-base-wedding">
-                        <h1>Google Map</h1>
+                    <div class="text-center py-10 mt-8 text-[20px] font-base-wedding">
+                        <h1 class="font-four-wedding text-[28px]">Google Map</h1>
+                        <span>Alamat Resepsi Pernikahan</span>
                     </div>
                 <div class="border-[2px] border-red-900 w-[90%] h-[400px] mx-auto shadow-lg">
                     <iframe 
@@ -236,6 +228,7 @@ import FooterBanner1 from '../assets/footer-banner1.webp';
 import FooterBanner2 from '../assets/footer-banner2.webp';
 import FooterBanner3 from '../assets/footer-banner3.webp';
 
+import { Modal } from 'flowbite'
 import {getDatabase, ref, push, onValue} from 'firebase/database';
 
 export default {
@@ -281,6 +274,23 @@ export default {
     },
 
     methods: {
+        openModal() {
+            const $targetEl = document.getElementById('popup-modal');
+            const options = {
+                backdropClasses: ''
+            }
+            const modal = new Modal($targetEl, options)
+
+            modal.show();
+        },
+
+        closeModal() {
+            const $targetEl = document.getElementById('popup-modal');
+            const modal = new Modal($targetEl)
+            
+            modal.hide();
+        },
+        
         copyToClipboard(text) {
             const el = document.createElement('textarea');
             el.value = text;

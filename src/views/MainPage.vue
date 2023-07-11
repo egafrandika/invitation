@@ -18,7 +18,7 @@
         </div>
         <div class="absolute w-full text-center right-0 bottom-0 p-20 max-sm:p-5 bg-gradient-to-t from-0% from-neutral-950 to-100%">
           <h1 class="font-base-wedding text-lg max-sm:text-[20px] text-white">Kepada Bapak/Ibu/Saudara/i</h1>
-          <h1 class="font-base-wedding text-lg pt-4 pb-6 max-sm:pb-4 max-sm:pt-2 max-sm:text-[18px] text-white">Yusuf</h1>
+          <h1 class="font-base-wedding text-lg pt-4 pb-6 max-sm:pb-4 max-sm:pt-2 max-sm:text-[18px] text-white">{{ name }}</h1>
           <router-link to="/home-page">
               <div class="p-4 max-sm:p-1.5 flex flex-row justify-center space-x-4 border-4 max-sm:border-2 border-slate-100 rounded-lg items-center max-w-[250px] max-sm:max-w-[180px] mx-auto cursor-pointer">
                 <v-icon name="bi-envelope-open" animation="ring" scale="1.5" fill="white"/>
@@ -38,9 +38,14 @@
   
     data() {
       return {
+        name: '',
         homeImage,
         isMusicPlayed: false
       }
+    },
+
+    mounted() {
+      this.name = this.$route.params.name;
     },
 
     methods: {

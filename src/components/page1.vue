@@ -12,24 +12,24 @@
             <div class="mx-auto border-[#C38154] border-[10px] max-w-[220px] h-[380px] rounded-[200px] bg-origin-content shadow-lg shadow-slate-800">
                 <img :src="Image1" alt="image1" class="object-cover h-full w-full rounded-[200px]">
             </div>
-            <div class="p-5 text-center relative">
+            <div class="p-5 text-center relative z-50">
                 <h1 class="font-second-wedding text-[50px]">Ega & Dika</h1>
                 <CountdownWedding/>
-                <div class="date-wrapper animate-pulse">
+                <div class="animate-pulse">
                     <div class="p-6">
                         <div class="bg-[#442B1B] w-fit mx-auto p-2 rounded-[14px] flex flex-row items-center shadow-lg shadow-slate-800">
                             <v-icon name="bi-calendar-date" animation="ring" scale="1.5" fill="white"/>
-                            <h1 class="font-serif ml-2 text-white"> SAVE THE DATE </h1>
+                            <h1 class="font-serif ml-2 text-white">SAVE THE DATE</h1>
                         </div>
                     </div>
                 </div>
-                <div class="p-10">
-                    <img :src="Wayang1" alt="wayang1" class="absolute lg:w-72 md:w-72 sm:w-60 w-36 h-auto bottom-0 -left-[70px] z-10">
-                    <img :src="Wayang2" alt="wayang2" class="absolute lg:w-[430px] md:w-[420px] sm:w-[350px] w-56 h-auto bottom-0 -right-[110px] z-10">
-                    <img :src="FooterBanner1" alt="footer-banner1" class="absolute -bottom-1 left-0 w-full h-auto z-20">
-                    <img :src="FooterBanner2" alt="footer-banner2" class="absolute bottom-5 right-0 w-full h-auto z-0">
-                    <img :src="FooterBanner3" alt="footer-banner3" class="absolute bottom-0 right-0 w-full h-auto z-0">
-                </div>
+            </div>
+            <div class="p-10">
+                <img :src="FooterBanner2" alt="footer-banner2" class="absolute bottom-5 right-0 w-full h-auto">
+                <img :src="FooterBanner3" alt="footer-banner3" class="absolute bottom-0 right-0 w-full h-auto">
+                <img :src="Wayang2" alt="wayang2" class="absolute lg:w-[430px] md:w-[420px] sm:w-[350px] w-56 h-auto bottom-0 -right-[110px]">
+                <img :src="Wayang1" alt="wayang1" class="absolute lg:w-72 md:w-72 sm:w-60 w-36 h-auto bottom-0 -left-[70px]">
+                <img :src="FooterBanner1" alt="footer-banner1" class="absolute -bottom-1 left-0 w-full h-auto">
             </div>
         </div>
     </div>

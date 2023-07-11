@@ -7,6 +7,10 @@ const router = createRouter({
   routes: [
     {
       path: '/',
+      redirect: '/input-name'
+    },
+    {
+      path: '/:name',
       name: 'main-page',
       component: MainPage,
     },
