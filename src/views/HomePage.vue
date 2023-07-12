@@ -42,17 +42,14 @@ export default{
         };
     },
 
+    unmounted() {
+        this.stopMusic();
+    },
+
     beforeRouteEnter(to, from, next) {
         next(vm => {
         vm.playMusic();
         });
-    },
-
-    beforeRouteLeave(to, from, next) {
-        if (from.name === 'homepage') {
-            this.stopMusic();
-        }
-            next();
     },
 
     methods: {

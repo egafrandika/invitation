@@ -14,7 +14,7 @@
                 <h1 class="font-second-wedding text-[50px] text-right">{{ item.girlTitle }}</h1>
                 <div class="flex flex-col text-[15px] font-base-wedding text-right max-w-xs">
                     <span class="pb-2">{{ item.desc }}</span>
-                    <div class="flex items-center bg-[#442B1B] w-fit px-4 py-1 rounded-md self-end">
+                    <div v-for="url in instagramUrl" @click="goGirlInstagram(url.girlInstagram)" class="flex items-center bg-[#442B1B] w-fit px-4 py-1 rounded-md self-end">
                         <v-icon name="pr-instagram" animation="ring" scale="1.5" fill="white"/>
                         <span>{{ item.media }}</span>
                     </div>
@@ -41,7 +41,7 @@
                 <h1 class="font-second-wedding text-[50px]">{{ item.manTitle }}</h1>
                 <div class="flex flex-col text-[15px] font-base-wedding max-w-xs">
                     <span class="pb-2">{{ item.desc }}</span>
-                    <div class="flex items-center justify-start bg-[#442B1B] w-fit px-4 py-1 rounded-md">
+                    <div v-for="url in instagramUrl" @click="goManInstagram(url.manInstagram)" class="flex items-center justify-start bg-[#442B1B] w-fit px-4 py-1 rounded-md">
                         <v-icon name="pr-instagram" animation="ring" scale="1.5" fill="white"/>
                         <span>{{ item.media }}</span>
                     </div>
@@ -79,9 +79,15 @@ export default {
         return {
             Image1,
             texts: [
-                {bismilah: 'بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ'},
-                {babel: 'وَ مِنۡ اٰیٰتِہٖۤ اَنۡ خَلَقَ لَکُمۡ مِّنۡ اَنۡفُسِکُمۡ اَزۡوَاجًا لِّتَسۡکُنُوۡۤا اِلَیۡہَا وَ جَعَلَ بَیۡنَکُمۡ مَّوَدَّۃً وَّ رَحۡمَۃً ؕ اِنَّ فِیۡ ذٰلِکَ لَاٰیٰتٍ لِّقَوۡمٍ یَّتَفَکَّرُوۡنَ'},
-                {description: '❝ Dan diantara tanda - tanda kekuasaan-Nya ialah diciptakan-Nya untukmu pasangan hidup dari jenismu sendiri supaya kamu mendapat ketenangan hati dan dijadikan-Nya kasih sayang diantara kamu. Sesungguhnya yang demikian itu menjadi tanda - tanda kebesaran-Nya bagi orang - orang yang berfikir.❞'}
+                {
+                    bismilah: 'بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ'
+                },
+                {
+                    babel: 'وَ مِنۡ اٰیٰتِہٖۤ اَنۡ خَلَقَ لَکُمۡ مِّنۡ اَنۡفُسِکُمۡ اَزۡوَاجًا لِّتَسۡکُنُوۡۤا اِلَیۡہَا وَ جَعَلَ بَیۡنَکُمۡ مَّوَدَّۃً وَّ رَحۡمَۃً ؕ اِنَّ فِیۡ ذٰلِکَ لَاٰیٰتٍ لِّقَوۡمٍ یَّتَفَکَّرُوۡنَ'
+                },
+                {
+                    description: '❝ Dan diantara tanda - tanda kekuasaan-Nya ialah diciptakan-Nya untukmu pasangan hidup dari jenismu sendiri supaya kamu mendapat ketenangan hati dan dijadikan-Nya kasih sayang diantara kamu. Sesungguhnya yang demikian itu menjadi tanda - tanda kebesaran-Nya bagi orang - orang yang berfikir.❞'
+                }
 
             ],
             Man: [
@@ -108,8 +114,24 @@ export default {
                 Photo5,
                 Photo6,
                 Photo7
+            ],
+            instagramUrl: [
+                {
+                    manInstagram: 'https://www.instagram.com/ega_frandika/',
+                    girlInstagram: 'https://www.instagram.com/triegas/'
+                }
             ]
         }
+    },
+
+    methods: {
+        goManInstagram(link) { 
+            window.location = link
+        },
+
+        goGirlInstagram(link) { 
+            window.location = link
+        },
     }
 }
 

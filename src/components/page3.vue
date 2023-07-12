@@ -29,7 +29,7 @@
 
         <div class="pt-10 pb-10">
             <div class="relative mx-auto border-[#C38154] border-[10px] max-w-[320px] h-[580px] rounded-[200px] bg-origin-content shadow-lg shadow-slate-800">
-                <video :src="VideoMp4" autoplay playsinline muted class="object-cover h-full w-full rounded-[200px] brightness-[.3]"/>
+                <video :src="VideoMp4" autoplay loop playsinline muted class="object-cover h-full w-full rounded-[200px] brightness-[.5]"/>
                 <div v-for="event in prewedding" class="absolute w-full top-0 py-6 text-center font-second-wedding text-[40px] text-[#e4c8b5]">
                     <h1>{{ event.title1 }}</h1>
                     <img :src="PohonWayang" class="w-[130px] mx-auto">
@@ -85,7 +85,7 @@ import VideoMp4 from '../assets/wedding-video.mp4';
 import Image1 from '../assets/image1.jpeg';
 import PohonWayang from '../assets/kelir-petir.webp';
 
-const youtubeVideo = 'https://www.youtube.com/watch?v=csvx-HXbziE&t=198s&ab_channel=AbeRiki';
+const youtubeVideo = 'https://youtu.be/7EipXhF4knc';
 const locationMaps = 'https://www.google.com/maps/place/Paud+Annisa/@-5.1767408,105.1847376,20.77z/data=!4m22!1m15!4m14!1m6!1m2!1s0x2e40b957bbf6c05d:0x1b9695b1c97e4fc!2sMetro,+Metro+Pusat,+Metro+City,+Lampung!2m2!1d105.3043378!2d-5.1254784!1m6!1m2!1s0x2e40b6136ee24507:0x4039d80b2210860!2sTegineneng,+Pesawaran+Regency,+Lampung!2m2!1d105.1776307!2d-5.1918346!3m5!1s0x2e40b73a3809a7d9:0xf5f4af50f81bbcaf!8m2!3d-5.1767355!4d105.1847592!16s%2Fg%2F11jr5zgkbh?entry=ttu'
 
 export default {
