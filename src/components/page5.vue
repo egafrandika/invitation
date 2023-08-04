@@ -161,43 +161,43 @@
                                 <div class="hidden peer-checked/published:block font-base-wedding pt-4 text-slate-300">Saya Berhalangan untuk Hadir.</div>
                             </div>
                         </div>
-                        <div class="w-full">
+                        <div class="w-full mb-5">
                             <button 
+                                :disabled="isBtnDisabled"
                                 class="bg-[#4a2e1c] hover:bg-[#63412c] text-white font-bold py-2 w-full rounded focus:outline-none focus:shadow-outline" 
                                 type="button"
                                 @click="retrieveFormData">
                                 Kirim
                             </button>
                         </div>
-                        <div class="w-full text-start pt-8 flex flex-row space-x-2" v-for="(rec, index) in record" :key="index">
-                            <div class="bg-[#4a2e1c] p-1 mt-1 max-sm:p-1 rounded-full h-fit w-fit">
-                                <img :src="profile" alt="" class="rounded-full max-w-[20px]">
-                            </div>
-                            <div>
-                                <div class="flex space-x-1 items-center">
-                                    <h1 class="font-base-wedding text-[20px]">{{ rec.nama }}</h1>
-                                    <template v-if="rec.kehadiran === 'hadir'">
-                                        <div class="flex bg-[#98c76b] items-center px-[3px] rounded space-x-[1px]">
-                                            <v-icon name="bi-check2" scale="0.8" fill="black"/>
-                                            <h1 class="font-base-wedding text-[12px] text-black-300">{{ rec.kehadiran}}</h1>
-                                        </div>
-                                    </template>
-                                    <template v-else>
-                                        <div class="flex bg-red-900 items-center px-[3px] rounded space-x-[1px]">
-                                            <v-icon name="pr-times" scale="0.8" fill="white"/>
-                                            <h1 class="font-base-wedding text-[12px] text-slate-300">{{ rec.kehadiran}}</h1>
-                                        </div>
-                                    </template>    
+                        <div class="overflow-y-auto h-80">
+                            <div class="w-full text-start flex flex-row space-x-2" v-for="(rec, index) in record" :key="index">
+                                <div class="bg-[#4a2e1c] p-1 mt-1 max-sm:p-1 rounded-full h-fit w-fit">
+                                    <img :src="profile" alt="" class="rounded-full max-w-[20px]">
                                 </div>
-                                <div class="flex items-center space-x-1">
-                                    <v-icon name="gi-alarm-clock" scale="0.8" fill="white"/>
-                                    <h1 class="text-[10px] text-slate-200 py-1">{{ rec.timeCreated }} WIB</h1>
+                                <div>
+                                    <div class="flex space-x-1 items-center">
+                                        <h1 class="font-base-wedding text-[20px]">{{ rec.nama }}</h1>
+                                        <template v-if="rec.kehadiran === 'hadir'">
+                                            <div class="flex bg-[#98c76b] items-center px-[3px] rounded space-x-[1px]">
+                                                <v-icon name="bi-check2" scale="0.8" fill="black"/>
+                                                <h1 class="font-base-wedding text-[12px] text-black-300">{{ rec.kehadiran}}</h1>
+                                            </div>
+                                        </template>
+                                        <template v-else>
+                                            <div class="flex bg-red-900 items-center px-[3px] rounded space-x-[1px]">
+                                                <v-icon name="pr-times" scale="0.8" fill="white"/>
+                                                <h1 class="font-base-wedding text-[12px] text-slate-300">{{ rec.kehadiran}}</h1>
+                                            </div>
+                                        </template>    
+                                    </div>
+                                    <div class="flex items-center space-x-1">
+                                        <v-icon name="gi-alarm-clock" scale="0.8" fill="white"/>
+                                        <h1 class="text-[10px] text-slate-200 py-1">{{ rec.timeCreated }} WIB</h1>
+                                    </div>
+                                    <span class="font-base-wedding max-sm:text-[12px]">{{ rec.ucapan }}</span>
                                 </div>
-                                <span class="font-base-wedding max-sm:text-[12px]">{{ rec.ucapan }}</span>
                             </div>
-                        </div>
-                        <div class="text-center cursor-pointer">
-                            <v-icon name="md-keyboardarrowdown-round" scale="2.0" animation="float" fill="black"/>
                         </div>
                     </form>
                 </div>
@@ -319,15 +319,21 @@ export default {
                     minute: '2-digit',
                     second: '2-digit'
                 };
-
+                console.log("Records before sorting:", this.record);
                 this.record = records.map(record => {
                     const timestamp = new Date(record.timeCreated);
-                    const formattedTimestamp = timestamp.toLocaleString('id-ID', options);
                     return {
                         ...record,
-                        timeCreated: formattedTimestamp
+                        timeCreated: timestamp
                     };
-                });
+                }).sort((a, b) => new Date(b.timeCreated) - new Date(a.timeCreated))
+                .map(record => {
+                    return {
+                        ...record,
+                        timeCreated: record.timeCreated.toLocaleString('id-ID', options)
+                    }
+                })
+
             }, {
                 onlyOnce: true
             });
