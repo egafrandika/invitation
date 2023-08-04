@@ -17,10 +17,22 @@
                 <CountdownWedding/>
                 <div class="animate-pulse">
                     <div class="p-6">
-                        <div class="bg-[#442B1B] w-fit mx-auto p-2 rounded-[14px] flex flex-row items-center shadow-lg shadow-slate-800">
-                            <v-icon name="bi-calendar-date" animation="ring" scale="1.5" fill="white"/>
-                            <h1 class="font-serif ml-2 text-white">SAVE THE DATE</h1>
-                        </div>
+                        <add-to-calendar-button 
+                            class="bg-[#442B1B] w-fit mx-auto rounded-[8px] flex flex-row items-center shadow-lg shadow-slate-800"
+                            name="Pernikahan Ega & Dika" 
+                            description="Pengingat hari pernikahan Ega & Dika" 
+                            startDate="2023-08-31"
+                            startTime="08:15"
+                            endTime="22:15"
+                            location="Tegineneng, Lampung" 
+                            options="'Google'" 
+                            timeZone="Asia/Jakarta" 
+                            iCalFileName="Pernikahan Ega & Dika"
+                            buttonStyle="date" 
+                            listStyle="modal" 
+                            size="1"
+                            debug
+                        ></add-to-calendar-button>
                     </div>
                 </div>
             </div>
