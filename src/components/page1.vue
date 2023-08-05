@@ -4,19 +4,19 @@
             <img :src="Tirai" alt="header" class="w-full fixed-top z-50">
         </div>
         <div class="text-wrapper">
-            <h1 class="text-center text-[20px] font-medium p-20 max-sm:p-5 mx-auto max-sm:w-60 font-base-wedding text-gray-900">
+            <h1 v-motion-pop class="text-center text-[20px] font-medium p-20 max-sm:p-5 mx-auto max-sm:w-60 font-base-wedding text-gray-900">
                 We invited you to celebrate our Wedding Ceremony
             </h1>
         </div>
         <div class="w-full relative overflow-hidden">
-            <div class="mx-auto border-[#C38154] border-[10px] max-w-[220px] h-[380px] rounded-[200px] bg-origin-content shadow-lg shadow-slate-800">
+            <div v-motion-pop class="mx-auto border-[#C38154] border-[10px] max-w-[220px] h-[380px] rounded-[200px] bg-origin-content shadow-lg shadow-slate-800">
                 <img :src="Image1" alt="image1" class="object-cover h-full w-full rounded-[200px]">
             </div>
             <div class="p-5 text-center relative z-50">
-                <h1 class="font-second-wedding text-[50px]">Ega & Dika</h1>
-                <CountdownWedding/>
+                <h1 v-motion-pop-visible class="font-second-wedding text-[50px]">Ega & Dika</h1>
+                <CountdownWedding v-motion-pop-visible/>
                 <div class="animate-pulse">
-                    <div class="p-6">
+                    <div v-motion-pop-visible class="p-6">
                         <add-to-calendar-button 
                             class="bg-[#442B1B] w-fit mx-auto rounded-[8px] flex flex-row items-center shadow-lg shadow-slate-800"
                             name="Pernikahan Ega & Dika" 

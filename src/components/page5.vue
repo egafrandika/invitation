@@ -5,7 +5,7 @@
                 <img :src="img" class="rotate-180 w-full absolute">
             </div>
             <div class="pt-[250px] pb-44">
-                <div class="relative mx-auto border-[#C38154] border-[10px] max-w-[320px] h-[580px] rounded-[200px] bg-origin-content shadow-lg shadow-slate-800">
+                <div v-motion-pop-visible class="relative mx-auto border-[#C38154] border-[10px] max-w-[320px] h-[580px] rounded-[200px] bg-origin-content shadow-lg shadow-slate-800">
                     <img :src="Image1" autoplay muted class="object-cover h-full w-full rounded-[200px] brightness-[.3]">
                     <div v-for="gift in gifts" class="absolute w-full top-0 py-2 text-center font-second-wedding text-[40px] text-[#e4c8b5]">
                         <img :src="PohonWayang" class="w-[130px] mx-auto py-3">
@@ -59,10 +59,10 @@
                     </div>
                 </div>
                     <div class="text-center py-10 mt-8 text-[20px] font-base-wedding">
-                        <h1 class="font-four-wedding text-[28px]">Google Map</h1>
-                        <span>Alamat Resepsi Pernikahan</span>
+                        <h1 v-motion-slide-visible-right class="font-four-wedding text-[28px]">Google Map</h1>
+                        <p v-motion-slide-visible-left>Alamat Resepsi Pernikahan</p>
                     </div>
-                <div class="border-[2px] border-red-900 w-[90%] h-[400px] mx-auto shadow-lg">
+                <div v-motion-pop-visible class="border-[2px] border-red-900 w-[90%] h-[400px] mx-auto shadow-lg">
                     <iframe 
                         :src="googleSource"
                         style="border:0;"
@@ -72,11 +72,11 @@
                         class="mx-auto w-full h-full">
                     </iframe>
                 </div>
-                <div class="text-center pt-20 font-base-wedding text-[20px] w-[300px] mx-auto">
+                <div v-motion-slide-visible-left class="text-center pt-20 font-base-wedding text-[20px] w-[300px] mx-auto">
                     <span>Konfirmasi Kehadiran Anda di Acara Pernikahan</span>
-                    <h1 class="font-second-wedding text-[50px] py-2">Ega & Dika</h1>
+                    <h1 v-motion-slide-visible-right class="font-second-wedding text-[50px] py-2">Ega & Dika</h1>
                 </div>
-                <div class="w-full max-sm:max-w-xs max-w-xl mx-auto">
+                <div v-motion-pop-visible class="w-full max-sm:max-w-xs max-w-xl mx-auto">
                     <form class="bg-[#442B1B] shadow-md rounded px-8 pt-6 pb-8 mb-4">
                         <div class="mb-4">
                             <label class="block text-gray-300 text-sm font-bold mb-2" for="nama">
@@ -105,10 +105,10 @@
                     </form>
                 </div>
                 <div class="text-center pt-10 font-base-wedding text-[20px] w-[300px] mx-auto">
-                    <span>Ucapan Selamat & Doa untuk</span>
-                    <h1 class="font-second-wedding text-[50px] py-2">Ega & Dika</h1>
+                    <p v-motion-slide-visible-left>Ucapan Selamat & Doa untuk</p>
+                    <h1 v-motion-slide-visible-right class="font-second-wedding text-[50px] py-2">Ega & Dika</h1>
                 </div>
-                <div class="w-full max-sm:max-w-xs max-w-xl mx-auto">
+                <div v-motion-pop-visible class="w-full max-sm:max-w-xs max-w-xl mx-auto">
                     <form class="bg-[#b57d5b] shadow-md rounded px-8 pt-6 pb-8 md:mb-48 sm:mb-40 max-sm:mb-20" id="myForm">
                         <div class="flex py-2 items-center space-x-1">
                             <v-icon name="bi-chat-square-text" animation="ring" scale="1.5" fill="white"/>

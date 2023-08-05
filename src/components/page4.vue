@@ -2,15 +2,15 @@
     <div class="bg-[#0d0c0c] w-full">
         <div class="w-[50%] max-sm:w-[80%] mx-auto text-center pb-10">
             <div class="leading-[22px]">
-                <h1 class="text-[#ddcaca] text-center pt-10 font-third-wedding text-[30px]">Our</h1>
-                <h1 class="text-[#ddcaca] text-center pb-4 font-third-wedding text-[50px]">Memory</h1>
+                <h1 v-motion-slide-visible-right class="text-[#ddcaca] text-center pt-10 font-third-wedding text-[30px]">Our</h1>
+                <h1 v-motion-slide-visible-left class="text-[#ddcaca] text-center pb-4 font-third-wedding text-[50px]">Memory</h1>
             </div>
-            <span class="text-[#cec3c3] font-four-wedding text-[15px]">
+            <span v-motion-pop-visible class="text-[#cec3c3] font-four-wedding text-[15px]">
                 Kisah hubungan kami yang selama ini tidak banyak orang ketahui. Begitu nano-nano, tetapi akhirnya memutuskan untuk menghadapi semua bersama.
             </span>
         </div>
         <div class="pb-10">
-            <div class="bg-[#ddcaca] w-[90%] mx-auto pb-10">
+            <div v-motion-pop-visble class="bg-[#ddcaca] w-[90%] mx-auto pb-10">
                 <img :src="ImagePhoto" class="w-[90%]  mx-auto pt-5 drop-shadow-lg">
                 <div class="py-4 flex items-center justify-center">
                     <v-icon name="co-calendar" animation="ring" scale="1.5" fill="#57C181"/>
@@ -22,13 +22,11 @@
                 </div>
             </div>
         </div>
-
         <div class="text-[#ddcaca] text-center pb-10 pt-4 w-[90%] mx-auto">
-            <h1 class="font-four-wedding text-[20px] leading-3">Our</h1>
-            <h1 class="font-four-wedding text-[35px]">Gallery</h1>
-            <span class="font-four-wedding text-[15px]">Sedikit karya fotografi sebagai kenang-kenangan bagi kami berdua.</span>
+            <h1 v-motion-slide-visible-left class="font-four-wedding text-[20px] leading-3">Our</h1>
+            <h1 v-motion-slide-visible-right class="font-four-wedding text-[35px]">Gallery</h1>
+            <span v-motion-slide-visible-bottom class="font-four-wedding text-[15px]">Sedikit karya fotografi sebagai kenang-kenangan bagi kami berdua.</span>
         </div>
-
         <div class="w-[90%] mx-auto pb-20">
             <div class="w-full">
                 <div class="grid grid-cols-4 grid-rows-4 max-sm:grid-rows-2 max-sm:grid-cols-2 gap-2">

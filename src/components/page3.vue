@@ -4,7 +4,7 @@
             <img :src="img" class="rotate-180 w-full absolute">
         </div>
         <div class="pt-44 pb-10">
-            <div class="relative mx-auto border-[#C38154] border-[10px] max-w-[320px] h-[580px] rounded-[200px] bg-origin-content shadow-lg shadow-slate-800">
+            <div v-motion-pop-visible class="relative mx-auto border-[#C38154] border-[10px] max-w-[320px] h-[580px] rounded-[200px] bg-origin-content shadow-lg shadow-slate-800">
                 <img :src="Image1" alt="image1" class="object-cover h-full w-full rounded-[200px] brightness-[.3]">
                 <div v-for="item in items" class="absolute w-full top-0 py-6 text-center font-second-wedding text-[40px] text-[#e4c8b5]">
                     <h1>{{ item.title1 }}</h1>
@@ -28,7 +28,7 @@
         </div>
 
         <div class="pt-10 pb-10">
-            <div class="relative mx-auto border-[#C38154] border-[10px] max-w-[320px] h-[580px] rounded-[200px] bg-origin-content shadow-lg shadow-slate-800">
+            <div v-motion-pop-visible class="relative mx-auto border-[#C38154] border-[10px] max-w-[320px] h-[580px] rounded-[200px] bg-origin-content shadow-lg shadow-slate-800">
                 <video :src="VideoMp4" autoplay loop playsinline muted class="object-cover h-full w-full rounded-[200px] brightness-[.5]"/>
                 <div v-for="event in prewedding" class="absolute w-full top-0 py-6 text-center font-second-wedding text-[40px] text-[#e4c8b5]">
                     <h1>{{ event.title1 }}</h1>
@@ -52,7 +52,7 @@
         </div>
 
         <div class="pt-10 pb-44">
-            <div class="relative mx-auto border-[#C38154] border-[10px] max-w-[320px] h-[580px] rounded-[200px] bg-origin-content shadow-lg shadow-slate-800">
+            <div v-motion-pop-visible class="relative mx-auto border-[#C38154] border-[10px] max-w-[320px] h-[580px] rounded-[200px] bg-origin-content shadow-lg shadow-slate-800">
                 <img :src="Image1" autoplay muted class="object-cover h-full w-full rounded-[200px] brightness-[.3]">
                 <div v-for="event in events" class="absolute w-full top-0 py-6 text-center font-second-wedding text-[40px] text-[#e4c8b5]">
                     <h1>{{ event.title1 }}</h1>

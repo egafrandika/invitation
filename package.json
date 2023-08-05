@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@chenfengyuan/vue-countdown": "^2.1.1",
+    "@vueuse/motion": "^2.0.0",
     "add-to-calendar-button": "^2.3.1",
     "firebase": "^9.23.0",
     "flowbite": "^1.6.5",

@@ -1,6 +1,7 @@
 import { createApp } from 'vue'
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
+import { MotionPlugin } from '@vueuse/motion';
 import firebaseConfig from './firebase'
 import './style.css'
 import App from './App.vue'
@@ -58,5 +59,6 @@ getAnalytics();
 app.component("v-icon", OhVueIcon);
 app.component(VueCountdown.name, VueCountdown);
 app.use(router);
+app.use(MotionPlugin);
 app.mount("#app");
 
