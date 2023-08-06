@@ -66,6 +66,33 @@
                     <div class="md:col-span-2">
                         <img :src="Image12" alt="" class="inset-0 h-full w-full object-cover object-center rounded opacity-75 hover:opacity-100">
                     </div>
+                    <div class="w-full row-span-1 md:row-span-2">
+                        <img :src="Image13" alt="" class="inset-0 h-full w-full object-cover object-center rounded opacity-75 hover:opacity-100">
+                    </div>
+                    <div class="w-full row-span-2 md:col-span-2">
+                        <img :src="Image14" alt="" class="inset-0 h-full w-full object-cover object-center rounded opacity-75 hover:opacity-100">
+                    </div>
+                    <div class="w-full row-span-1 md:row-span-2">
+                        <img :src="Image15" alt="" class="inset-0 h-full w-full object-cover object-center rounded opacity-75 hover:opacity-100">
+                    </div>
+                    <div class="w-full col-span-1 row-span-1 md:col-span-2 md:row-span-2">
+                        <img :src="Image16" alt="" class="inset-0 h-full w-full object-cover object-center rounded opacity-75 hover:opacity-100">
+                    </div>
+                    <div class="w-full col-span-1">
+                        <img :src="Image17" alt="" class="inset-0 h-full w-full object-cover object-center rounded opacity-75 hover:opacity-100">
+                    </div>
+                    <div class="w-full">
+                        <img :src="Image18" alt="" class="inset-0 h-full w-full object-cover object-center rounded opacity-75 hover:opacity-100">
+                    </div>
+                    <div class="w-full">
+                        <img :src="Image19" alt="" class="inset-0 h-full w-full object-cover object-center rounded opacity-75 hover:opacity-100">
+                    </div>
+                    <div class="w-full col-span-1 row-span-2">
+                        <img :src="Image20" alt="" class="inset-0 h-full w-full object-cover object-center rounded opacity-75 hover:opacity-100">
+                    </div>
+                    <div class="md:row-span-2">
+                        <img :src="Image21" alt="" class="inset-0 h-full w-full object-cover object-center rounded opacity-75 hover:opacity-100">
+                    </div>
                 </div>
             </div>
         </div>
@@ -74,18 +101,27 @@
 
 <script>
 import ImagePhoto from '../assets/image1.jpeg';
-import Image1 from '../assets/gallery/image-1.jpg';
-import Image2 from '../assets/gallery/image-2.jpg';
-import Image3 from '../assets/gallery/image-3.jpg';
-import Image4 from '../assets/gallery/image-4.jpg';
-import Image5 from '../assets/gallery/image-5.jpg';
-import Image6 from '../assets/gallery/image-6.jpg';
-import Image7 from '../assets/gallery/image-7.jpg';
-import Image8 from '../assets/gallery/image-8.jpg';
-import Image9 from '../assets/gallery/image-9.jpg';
-import Image10 from '../assets/gallery/image-10.jpg';
-import Image11 from '../assets/gallery/image-11.jpg';
-import Image12 from '../assets/gallery/image-12.jpg';
+import Image1 from '../assets/photo-wedding/edit/photo-gallery/photo-gallery1.jpg';
+import Image2 from '../assets/photo-wedding/edit/photo-gallery/photo-gallery2.jpg';
+import Image3 from '../assets/photo-wedding/edit/photo-gallery/photo-gallery3.jpg';
+import Image4 from '../assets/photo-wedding/edit/photo-gallery/photo-gallery4.jpg';
+import Image5 from '../assets/photo-wedding/edit/photo-gallery/photo-gallery5.jpg';
+import Image6 from '../assets/photo-wedding/edit/photo-gallery/photo-gallery6.jpg';
+import Image7 from '../assets/photo-wedding/edit/photo-gallery/photo-gallery7.jpg';
+import Image8 from '../assets/photo-wedding/edit/photo-gallery/photo-gallery8.jpg';
+import Image9 from '../assets/photo-wedding/edit/photo-gallery/photo-gallery9.jpg';
+import Image10 from '../assets/photo-wedding/edit/photo-gallery/photo-gallery10.jpg';
+import Image11 from '../assets/photo-wedding/edit/photo-gallery/photo-gallery11.jpg';
+import Image12 from '../assets/photo-wedding/edit/photo-gallery/photo-gallery12.jpg';
+import Image13 from '../assets/photo-wedding/edit/photo-gallery/photo-gallery13.jpg';
+import Image14 from '../assets/photo-wedding/edit/photo-gallery/photo-gallery14.jpg';
+import Image15 from '../assets/photo-wedding/edit/photo-gallery/photo-gallery15.jpg';
+import Image16 from '../assets/photo-wedding/edit/photo-gallery/photo-gallery16.jpg';
+import Image17 from '../assets/photo-wedding/edit/photo-gallery/photo-gallery17.jpg';
+import Image18 from '../assets/photo-wedding/edit/photo-gallery/photo-gallery18.jpg';
+import Image19 from '../assets/photo-wedding/edit/photo-gallery/photo-gallery19.jpg';
+import Image20 from '../assets/photo-wedding/edit/photo-gallery/photo-gallery20.jpg';
+import Image21 from '../assets/photo-wedding/edit/photo-gallery/photo-gallery21.jpg';
 
 
 
@@ -106,7 +142,16 @@ export default {
             Image9,
             Image10,
             Image11,
-            Image12
+            Image12,
+            Image13,
+            Image14,
+            Image15,
+            Image16,
+            Image17,
+            Image18,
+            Image19,
+            Image20,
+            Image21
         }
     }
 }

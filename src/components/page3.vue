@@ -53,7 +53,7 @@
 
         <div class="pt-10 pb-44">
             <div v-motion-pop-visible class="relative mx-auto border-[#C38154] border-[10px] max-w-[320px] h-[580px] rounded-[200px] bg-origin-content shadow-lg shadow-slate-800">
-                <img :src="Image1" autoplay muted class="object-cover h-full w-full rounded-[200px] brightness-[.3]">
+                <img :src="Image2" autoplay muted class="object-cover h-full w-full rounded-[200px] brightness-[.3]">
                 <div v-for="event in events" class="absolute w-full top-0 py-6 text-center font-second-wedding text-[40px] text-[#e4c8b5]">
                     <h1>{{ event.title1 }}</h1>
                     <img :src="PohonWayang" class="w-[130px] mx-auto">
@@ -82,7 +82,8 @@ import FooterBanner1 from '../assets/footer-banner1.webp';
 import FooterBanner2 from '../assets/footer-banner2.webp';
 import FooterBanner3 from '../assets/footer-banner3.webp';
 import VideoMp4 from '../assets/wedding-video.mp4';
-import Image1 from '../assets/image1.jpeg';
+import Image1 from '../assets/photo-wedding/edit/ijab-kobul.jpg';
+import Image2 from '../assets/photo-wedding/edit/photo-hiburan.jpg';
 import PohonWayang from '../assets/kelir-petir.webp';
 
 const youtubeVideo = 'https://youtu.be/7EipXhF4knc';
@@ -94,6 +95,7 @@ export default {
     data() {
         return {
             Image1,
+            Image2,
             PohonWayang,
             VideoMp4,
             items: [

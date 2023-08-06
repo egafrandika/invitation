@@ -5,7 +5,7 @@
             <h1 class="text-[#ddcaca] text-center pt-2">{{ text.babel }}</h1>
             <span class="text-[#ddcaca] text-center w-[200px] max-sm:text-[10px] leading-3">{{ text.description }}</span>
         </div>
-        <h1 class="text-[#ddcaca] font-serif text-center text-[40px] pb-9 pt-2">The Bride</h1>
+        <h1 v-motion-slide-visible-bottom class="text-[#ddcaca] font-serif text-center text-[40px] pb-9 pt-2">The Bride</h1>
         <div class="flex flex-row justify-center pl-6">
             <div v-motion-slide-visible-left class="border-[#C38154] border-[10px] max-w-[200px] h-[330px] max-sm:w-[340px] rounded-[200px] bg-origin-content shadow-lg shadow-slate-800">
                 <img :src="Image1" alt="image1" class="object-cover h-full w-full rounded-[200px]">
@@ -28,14 +28,14 @@
             </div>
         </div>
         <div class="pt-9 pb-9 flex space-x-2 overflow-auto snap-mandatory snap-x px-6">
-            <div v-for="img in images" class="flex-shrink-0 snap-center">
-                <img :src="img" class="w-auto h-[200px] rounded-md"/>
+            <div v-for="img in GirlImages" class="flex-shrink-0 snap-center">
+                <img :src="img" class="w-[330px] h-[200px] rounded-md object-cover"/>
             </div>
         </div>
-        <h1 class="text-[#ddcaca] font-serif text-center text-[40px] pt-9 pb-9">The Groom</h1>
+        <h1 v-motion-slide-visible-bottom class="text-[#ddcaca] font-serif text-center text-[40px] pt-9 pb-9">The Groom</h1>
         <div class="flex flex-row-reverse justify-center pr-6">
             <div v-motion-slide-visible-right class="border-[#C38154] border-[10px] max-w-[200px] h-[330px] max-sm:w-[340px] rounded-[200px] bg-origin-content shadow-lg shadow-slate-800">
-                <img :src="Image1" alt="image1" class="object-cover h-full w-full rounded-[200px]">
+                <img :src="Image4" alt="image1" class="object-cover h-full w-full rounded-[200px]">
             </div>
             <div class="flex flex-col justify-items-end text-[#ddcaca] px-6" v-for="item in Man">
                 <h1 v-motion-slide-visible-left class="font-second-wedding text-[50px]">{{ item.manTitle }}</h1>
@@ -55,22 +55,22 @@
             </div>
         </div>
         <div class="pt-9 pb-[50px] flex space-x-2 overflow-x-auto snap-mandatory snap-x px-6">
-            <div v-for="img in images" class="flex-shrink-0 snap-center">
-                <img :src="img" class="w-auto h-[200px] rounded-md"/>
+            <div v-for="img in ManImages" class="flex-shrink-0 snap-center">
+                <img :src="img" class="w-[330px] h-[200px] rounded-md object-cover"/>
             </div>
         </div>
     </div>
 </template>
 
 <script>
-import Image1 from '../assets/image1.jpeg';
-import Photo1 from '../assets/image1.jpeg';
-import Photo2 from '../assets/image1.jpeg';
-import Photo3 from '../assets/image1.jpeg';
-import Photo4 from '../assets/image1.jpeg';
-import Photo5 from '../assets/image1.jpeg';
-import Photo6 from '../assets/image1.jpeg';
-import Photo7 from '../assets/image1.jpeg';
+import Image1 from '../assets/photo-wedding/edit/girl-page2.jpg';
+import Photo1 from '../assets/photo-wedding/edit/girl1-page2.jpg';
+import Photo2 from '../assets/photo-wedding/edit/girl2-page2.jpg';
+import Photo3 from '../assets/photo-wedding/edit/girl3-page2.jpg';
+import Image4 from '../assets/photo-wedding/edit/man-page2.jpg';
+import Photo5 from '../assets/photo-wedding/edit/man1-page2.jpg';
+import Photo6 from '../assets/photo-wedding/edit/man2-page2.jpg';
+import Photo7 from '../assets/photo-wedding/edit/man3-page2.jpg';
 
 export default {
     name: 'Page2',
@@ -78,6 +78,7 @@ export default {
     data() {
         return {
             Image1,
+            Image4,
             texts: [
                 {
                     bismilah: 'بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ'
@@ -106,11 +107,12 @@ export default {
                     text: 'Doakan agar menjadi keluarga sakinah mawadah maromah'
                 }
             ],
-            images: [
+            GirlImages: [
                 Photo1,
                 Photo2,
                 Photo3,
-                Photo4,
+            ],
+            ManImages: [
                 Photo5,
                 Photo6,
                 Photo7

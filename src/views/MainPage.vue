@@ -31,7 +31,7 @@
   </template>
   
   <script>
-  import homeImage from '../assets/home-image.jpeg';
+  import homeImage from '../assets/photo-wedding/edit/pertama.jpg';
   
   export default{
     name: 'MainPage',

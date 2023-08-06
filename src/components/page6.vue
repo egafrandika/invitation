@@ -31,7 +31,7 @@
 </template>
 
 <script>
-    import Image1 from '../assets/image1.jpeg';
+    import Image1 from '../assets/home-image.jpeg';
     import Wayang1 from '../assets/wayang1.webp';
     import Wayang2 from '../assets/wayang2.webp';
     import FooterBanner1 from '../assets/footer-banner1.webp';
