@@ -31,7 +31,7 @@
   </template>
   
   <script>
-  import homeImage from '../assets/photo-wedding/edit/pertama.jpg';
+  // import homeImage from '../assets/photo-wedding/edit/pertama.jpg';
   
   export default{
     name: 'MainPage',
@@ -39,7 +39,7 @@
     data() {
       return {
         name: '',
-        homeImage,
+        homeImage: 'https://res.cloudinary.com/dfypljeaj/image/upload/v1691378429/photo-wedding/photo-wedding/edit/pertama_znyw7n.jpg',
         isMusicPlayed: false
       }
     },

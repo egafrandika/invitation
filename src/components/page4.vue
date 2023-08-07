@@ -101,28 +101,6 @@
 
 <script>
 import ImagePhoto from '../assets/image1.jpeg';
-// import Image2 from '../assets/photo-wedding/edit/photo-gallery/photo-gallery2.jpg';
-// import Image3 from '../assets/photo-wedding/edit/photo-gallery/photo-gallery3.jpg';
-// import Image4 from '../assets/photo-wedding/edit/photo-gallery/photo-gallery4.jpg';
-// import Image5 from '../assets/photo-wedding/edit/photo-gallery/photo-gallery5.jpg';
-// import Image6 from '../assets/photo-wedding/edit/photo-gallery/photo-gallery6.jpg';
-// import Image7 from '../assets/photo-wedding/edit/photo-gallery/photo-gallery7.jpg';
-// import Image8 from '../assets/photo-wedding/edit/photo-gallery/photo-gallery8.jpg';
-// import Image9 from '../assets/photo-wedding/edit/photo-gallery/photo-gallery9.jpg';
-// import Image10 from '../assets/photo-wedding/edit/photo-gallery/photo-gallery10.jpg';
-// import Image11 from '../assets/photo-wedding/edit/photo-gallery/photo-gallery11.jpg';
-// import Image12 from '../assets/photo-wedding/edit/photo-gallery/photo-gallery12.jpg';
-// import Image13 from '../assets/photo-wedding/edit/photo-gallery/photo-gallery13.jpg';
-// import Image14 from '../assets/photo-wedding/edit/photo-gallery/photo-gallery14.jpg';
-// import Image15 from '../assets/photo-wedding/edit/photo-gallery/photo-gallery15.jpg';
-// import Image16 from '../assets/photo-wedding/edit/photo-gallery/photo-gallery16.jpg';
-// import Image17 from '../assets/photo-wedding/edit/photo-gallery/photo-gallery17.jpg';
-// import Image18 from '../assets/photo-wedding/edit/photo-gallery/photo-gallery18.jpg';
-// import Image19 from '../assets/photo-wedding/edit/photo-gallery/photo-gallery19.jpg';
-// import Image20 from '../assets/photo-wedding/edit/photo-gallery/photo-gallery20.jpg';
-// import Image21 from '../assets/photo-wedding/edit/photo-gallery/photo-gallery21.jpg';
-
-
 
 export default {
     name: 'Page4',

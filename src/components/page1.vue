@@ -49,7 +49,7 @@
 
 <script>
 import Tirai from '../assets/tirai.webp';
-import Image1 from '../assets/photo-wedding/edit/utama-page1.jpg';
+// import Image1 from '../assets/photo-wedding/edit/utama-page1.jpg';
 import Wayang1 from '../assets/wayang1.webp';
 import Wayang2 from '../assets/wayang2.webp';
 import FooterBanner1 from '../assets/footer-banner1.webp';
@@ -69,7 +69,7 @@ export default{
             Tirai,
             Wayang1,
             Wayang2,
-            Image1,
+            Image1: 'https://res.cloudinary.com/dfypljeaj/image/upload/v1691381587/photo-wedding/photo-wedding/edit/utama-page1_bfugkp.jpg',
             FooterBanner1,
             FooterBanner2,
             FooterBanner3,
