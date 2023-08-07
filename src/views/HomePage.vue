@@ -3,9 +3,11 @@
         <FloatingButton/>
         <div class="wrapper-component-page">
             <Page1/>
-            <Page2/>
-            <Page3/>
-            <Page4/>
+            <div class="overflow-hidden">
+                <Page2/>
+                <Page3/>
+                <Page4/>
+            </div>
             <Page5/>
             <Page6/>
         </div>

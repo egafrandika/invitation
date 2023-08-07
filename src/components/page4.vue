@@ -11,7 +11,7 @@
         </div>
         <div class="pb-10">
             <div v-motion-pop-visble class="bg-[#ddcaca] w-[90%] mx-auto pb-10">
-                <img :src="ImagePhoto" class="w-[90%]  mx-auto pt-5 drop-shadow-lg">
+                <img :src="ImagePhoto" class="w-[90%] mx-auto pt-5 drop-shadow-lg">
                 <div class="py-4 flex items-center justify-center">
                     <v-icon name="co-calendar" animation="ring" scale="1.5" fill="#57C181"/>
                     <h1 class="font-serif px-2 text-[#403e3e]">25 Agustus 2018</h1>
