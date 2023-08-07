@@ -13,10 +13,10 @@
                 <img :src="Image1" alt="image1" class="object-cover h-full w-full rounded-[200px]">
             </div>
             <div class="p-5 text-center relative z-50">
-                <h1 v-motion-pop-visible class="font-second-wedding text-[50px]">Ega & Dika</h1>
-                <CountdownWedding v-motion-pop-visible/>
+                <h1 v-motion-slide-right class="font-second-wedding text-[50px]">Ega & Dika</h1>
+                <CountdownWedding v-motion-slide-left/>
                 <div class="animate-pulse">
-                    <div v-motion-pop-visible class="p-6">
+                    <div v-motion-slide-bottom class="p-6">
                         <add-to-calendar-button 
                             class="bg-[#442B1B] w-fit mx-auto rounded-[8px] flex flex-row items-center shadow-lg shadow-slate-800"
                             name="Pernikahan Ega & Dika" 
@@ -49,7 +49,7 @@
 
 <script>
 import Tirai from '../assets/tirai.webp';
-// import Image1 from '../assets/photo-wedding/edit/utama-page1.jpg';
+import Image1 from '../assets/photo-wedding/edit/utama-page1.jpg';
 import Wayang1 from '../assets/wayang1.webp';
 import Wayang2 from '../assets/wayang2.webp';
 import FooterBanner1 from '../assets/footer-banner1.webp';
@@ -69,7 +69,7 @@ export default{
             Tirai,
             Wayang1,
             Wayang2,
-            Image1: 'https://res.cloudinary.com/dfypljeaj/image/upload/v1691381587/photo-wedding/photo-wedding/edit/utama-page1_bfugkp.jpg',
+            Image1,
             FooterBanner1,
             FooterBanner2,
             FooterBanner3,
