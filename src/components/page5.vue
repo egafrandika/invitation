@@ -5,7 +5,7 @@
                 <img :src="img" class="rotate-180 w-full absolute">
             </div>
             <div class="pt-[250px] pb-44">
-                <div v-motion-pop-visible class="relative mx-auto border-[#C38154] border-[10px] max-w-[320px] h-[580px] rounded-[200px] bg-origin-content shadow-lg shadow-slate-800">
+                <div class="relative mx-auto border-[#C38154] border-[10px] max-w-[320px] h-[580px] rounded-[200px] bg-origin-content shadow-lg shadow-slate-800">
                     <img :src="Image1" autoplay muted class="object-cover h-full w-full rounded-[200px] brightness-[.3]">
                     <div v-for="gift in gifts" class="absolute w-full top-0 py-2 text-center font-second-wedding text-[40px] text-[#e4c8b5]">
                         <img :src="PohonWayang" class="w-[130px] mx-auto py-3">
