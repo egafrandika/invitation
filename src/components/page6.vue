@@ -20,8 +20,16 @@
                 <p v-motion-slide-visible-bottom class="font-base-wedding">klik untuk keatas</p>
             </div>
             <div>
-                <img :src="Wayang1" alt="" class="absolute w-[900px] md:w-[300px]  lg:w-[300px] xl:w-[300px] sm:w-[190px] max-sm:w-[120px] bottom-0 left-0">
-                <img :src="Wayang2" alt="" class="absolute w-[400px] md:w-[420px] lg:w-[400px] xl:w-[430px] sm:w-[250px] max-sm:w-[180px] max-sm:-right-10 bottom-0 right-0">
+                <img 
+                    v-motion
+                    :initial="{x: 0}"
+                    :enter="{x: 10, transition: { stiffness: 250, damping: 30, mass: 10, repeat: Infinity, repeatType: 'mirror' }}"
+                    :src="Wayang1" alt="" class="absolute w-[900px] md:w-[300px]  lg:w-[300px] xl:w-[300px] sm:w-[190px] max-sm:w-[120px] bottom-0 left-0">
+                <img
+                    v-motion
+                    :initial="{x: 10}"
+                    :enter="{x: 0, transition: { stiffness: 250, damping: 30, mass: 10, repeat: Infinity, repeatType: 'mirror' }}"
+                    :src="Wayang2" alt="" class="absolute w-[400px] md:w-[420px] lg:w-[400px] xl:w-[430px] sm:w-[250px] max-sm:w-[180px] max-sm:-right-10 bottom-0 right-0">
             </div>
             <div v-for="img in images" class="absolute w-full -bottom-1 z-0">
                 <img :src="img" class="w-full">

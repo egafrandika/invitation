@@ -39,8 +39,40 @@
             <div class="p-10">
                 <img :src="FooterBanner2" alt="footer-banner2" class="absolute bottom-5 right-0 w-full h-auto">
                 <img :src="FooterBanner3" alt="footer-banner3" class="absolute bottom-0 right-0 w-full h-auto">
-                <img :src="Wayang2" alt="wayang2" class="absolute lg:w-[430px] md:w-[420px] sm:w-[350px] w-56 h-auto bottom-0 -right-[110px]">
-                <img :src="Wayang1" alt="wayang1" class="absolute lg:w-72 md:w-72 sm:w-60 w-36 h-auto bottom-0 -left-[70px]">
+                <img 
+                    v-motion
+                    :initial="{
+                        x: 20
+
+                    }"
+                    :enter="{
+                        x: -20,
+                        transition: {
+                            stiffness: 250,
+                            damping: 25,
+                            mass: 10,
+                            repeat: Infinity,
+                            repeatType: 'mirror',
+                        }
+                    }"
+                    :src="Wayang2" alt="wayang2" class="absolute lg:w-[430px] md:w-[420px] sm:w-[350px] w-56 h-auto bottom-0 -right-[110px]">
+                <img
+                v-motion
+                    :initial="{
+                        x: -20
+
+                    }"
+                    :enter="{
+                        x: 20,
+                        transition: {
+                            stiffness: 250,
+                            damping: 20,
+                            mass: 10,
+                            repeat: Infinity,
+                            repeatType: 'mirror',
+                        }
+                    }" 
+                    :src="Wayang1" alt="wayang1" class="absolute lg:w-72 md:w-72 sm:w-60 w-36 h-auto bottom-0 -left-[70px]">
                 <img :src="FooterBanner1" alt="footer-banner1" class="absolute -bottom-1 left-0 w-full h-auto">
             </div>
         </div>

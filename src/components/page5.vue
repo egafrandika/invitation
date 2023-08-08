@@ -203,10 +203,21 @@
                 </div>
             </div>
             <div class="relative">
-                <img :src="Wayang1" alt="" class="absolute bottom-0 right-52 md:w-[210px] sm:right-40 sm:w-[150px] max-sm:right-20 transform scale-x-[-1] max-sm:w-[120px] w-[200px] z-10">
-                <img :src="Wayang2" alt="" class="absolute bottom-0 md:-right-20 right-0 md:w-[340px] sm:w-[250px] max-sm:-right-12 max-sm:w-[200px] w-[300px] z-10">
-                <img :src="pohonWayang1" alt="" class="z-10 absolute bottom-0 left-[100px] md:w-[210px] sm:w-[160px] max-sm:w-[120px]">
-                <img :src="pohonWayang1" alt="" class="z-0 absolute bottom-0 left-0 sm:left-0 md:w-[260px] sm:w-[190px] max-sm:w-[140px]">
+                <div class="z-50" v-motion 
+                    :initial="{ x: 0 }" 
+                    :enter="{x: 5,transition: {stiffness: 250,damping: 25,mass: 10,repeat: Infinity,repeatType: 'mirror'}}">
+                    <img :src="Wayang1" alt="" class="absolute bottom-0 right-52 md:w-[210px] sm:right-40 sm:w-[150px] max-sm:right-20 tranform scale-x-[-1] max-sm:w-[120px] w-[200px]">
+                    <img :src="Wayang2" alt="" class="absolute bottom-0 md:-right-20 right-0 md:w-[340px] sm:w-[250px] max-sm:-right-12 max-sm:w-[200px] w-[300px]">
+                </div>
+                <img 
+                    v-motion 
+                    :initial="{x: 0}"
+                    :enter="{x: 5, transition: { stiffness: 250, damping: 30, mass: 10, repeat: Infinity, repeatType: 'mirror' }}"
+                    :src="pohonWayang1" alt="" class="z-10 absolute bottom-0 left-[100px] md:w-[210px] sm:w-[160px] max-sm:w-[120px]">
+                <img 
+                    v-motion 
+                    :initial="{ x: -5 }" :enter="{ x: 5, transition: { stiffness: 250, damping: 30, mass: 10, repeat: Infinity, repeatType: 'mirror' }}" 
+                    :src="pohonWayang1" alt="" class="z-0 absolute bottom-0 left-0 sm:left-0 md:w-[260px] sm:w-[190px] max-sm:w-[140px]">
                 <img :src="FooterBanner2" alt="" class="absolute bottom-0 w-full">
                 <img :src="FooterBanner3" alt="" class="absolute bottom-0 w-full">
                 <img :src="FooterBanner1" alt="" class="absolute bottom-0 w-full z-40">
