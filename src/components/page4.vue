@@ -30,40 +30,40 @@
         <div class="w-[90%] mx-auto pb-20">
             <div class="w-full">
                 <div class="grid grid-cols-4 grid-rows-4 max-sm:grid-rows-2 max-sm:grid-cols-2 gap-2">
-                    <div class="w-full row-span-1 md:row-span-2">
+                    <div class="w-full row-span-1 md:row-span-1">
                         <img :src="Image1" alt="" class="inset-0 h-full w-full object-cover object-center rounded opacity-75 hover:opacity-100">
                     </div>
-                    <div class="w-full row-span-2 md:col-span-2">
+                    <div class="w-full row-span-2 md:col-span-2 md:row-span-1">
                         <img :src="Image2" alt="" class="inset-0 h-full w-full object-cover object-center rounded opacity-75 hover:opacity-100">
                     </div>
-                    <div class="w-full row-span-1 md:row-span-2">
+                    <div class="w-full row-span-1 md:row-span-1">
                         <img :src="Image3" alt="" class="inset-0 h-full w-full object-cover object-center rounded opacity-75 hover:opacity-100">
                     </div>
-                    <div class="w-full col-span-1 row-span-1 md:col-span-2 md:row-span-2">
+                    <div class="w-full col-span-1 row-span-1 md:col-span-2 md:row-span-0">
                         <img :src="Image4" alt="" class="inset-0 h-full w-full object-cover object-center rounded opacity-75 hover:opacity-100">
                     </div>
-                    <div class="w-full col-span-1">
-                        <img :src="Image6" alt="" class="inset-0 h-full w-full object-cover object-center rounded opacity-75 hover:opacity-100">
-                    </div>
-                    <div class="w-full">
+                    <div class="w-full md:col-span-2 md:row-span-1">
                         <img :src="Image5" alt="" class="inset-0 h-full w-full object-cover object-center rounded opacity-75 hover:opacity-100">
                     </div>
-                    <div class="w-full">
+                    <div class="w-full col-span-1 md:col-span-1">
+                        <img :src="Image6" alt="" class="inset-0 h-full w-full object-cover object-center rounded opacity-75 hover:opacity-100">
+                    </div>
+                    <div class="w-full md:col-span-2 md:row-span-1">
                         <img :src="Image7" alt="" class="inset-0 h-full w-full object-cover object-center rounded opacity-75 hover:opacity-100">
                     </div>
-                    <div class="w-full col-span-1 row-span-2">
+                    <div class="w-full col-span-1 row-span-2 md:row-span-1">
                         <img :src="Image8" alt="" class="inset-0 h-full w-full object-cover object-center rounded opacity-75 hover:opacity-100">
                     </div>
-                    <div class="md:row-span-2">
+                    <div class="md:row-span-1">
                         <img :src="Image9" alt="" class="inset-0 h-full w-full object-cover object-center rounded opacity-75 hover:opacity-100">
                     </div>
-                    <div class="md:full md:row-span-2">
+                    <div class="md:w-full md:row-span-1 md:col-span-3">
                         <img :src="Image10" alt="" class="inset-0 h-full w-full object-cover object-center rounded opacity-75 hover:opacity-100">
                     </div>
-                    <div class="md:col-span-1">
+                    <div class="md:col-span-3 md:row-span-1">
                         <img :src="Image11" alt="" class="inset-0 h-full w-full object-cover object-center rounded opacity-75 hover:opacity-100">
                     </div>
-                    <div class="md:col-span-2">
+                    <div class="md:col-span-1">
                         <img :src="Image12" alt="" class="inset-0 h-full w-full object-cover object-center rounded opacity-75 hover:opacity-100">
                     </div>
                     <div class="w-full row-span-1 md:row-span-2">
@@ -84,14 +84,11 @@
                     <div class="w-full">
                         <img :src="Image18" alt="" class="inset-0 h-full w-full object-cover object-center rounded opacity-75 hover:opacity-100">
                     </div>
-                    <div class="w-full">
+                    <div class="w-full row-span-2 md:row-span-1">
                         <img :src="Image19" alt="" class="inset-0 h-full w-full object-cover object-center rounded opacity-75 hover:opacity-100">
                     </div>
-                    <div class="w-full col-span-1 row-span-2">
+                    <div class="w-full col-span-1 row-span-1">
                         <img :src="Image20" alt="" class="inset-0 h-full w-full object-cover object-center rounded opacity-75 hover:opacity-100">
-                    </div>
-                    <div class="md:row-span-2">
-                        <img :src="Image21" alt="" class="inset-0 h-full w-full object-cover object-center rounded opacity-75 hover:opacity-100">
                     </div>
                 </div>
             </div>
@@ -121,7 +118,6 @@ import Image17 from '../assets/photo-wedding/edit/photo-gallery/photo-gallery17.
 import Image18 from '../assets/photo-wedding/edit/photo-gallery/photo-gallery18.jpg';
 import Image19 from '../assets/photo-wedding/edit/photo-gallery/photo-gallery19.jpg';
 import Image20 from '../assets/photo-wedding/edit/photo-gallery/photo-gallery20.jpg';
-import Image21 from '../assets/photo-wedding/edit/photo-gallery/photo-gallery21.jpg';
 
 export default {
     name: 'Page4',
@@ -148,8 +144,7 @@ export default {
             Image17,
             Image18,
             Image19,
-            Image20,
-            Image21
+            Image20
         }
     }
 }
