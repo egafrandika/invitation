@@ -402,7 +402,7 @@ export default {
             const dataRef = ref(database, 'dataInvitation/invitationForm');
 
             if(namaInput.value === '' || ucapanInput.value === '' || kehadiranInput.value === '') {
-                this.alertMessage = 'Harap dilangkapi ya 🙏';
+                this.alertMessage = 'Harap dilengkapi ya 🙏';
             } else {
                 push(dataRef, data).then(() => {
                     console.log('data success save to firebase');
