@@ -77,28 +77,52 @@
                     <h1 v-motion-slide-visible-right class="font-second-wedding text-[50px] py-2">Ega & Dika</h1>
                 </div>
                 <div v-motion-pop-visible class="w-full max-sm:max-w-xs max-w-xl mx-auto">
-                    <form class="bg-[#442B1B] shadow-md rounded px-8 pt-6 pb-8 mb-4">
+                    <form id="mySubmitionForm" class="bg-[#442B1B] shadow-md rounded px-8 pt-6 pb-8 mb-4">
                         <div class="mb-4">
-                            <label class="block text-gray-300 text-sm font-bold mb-2" for="nama">
+                            <label class="block text-gray-300 text-sm font-bold mb-2" for="submitName">
                                 Nama
                             </label>
-                            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="Nama">
+                            <input 
+                                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
+                                id="submitName" 
+                                type="text" 
+                                placeholder="Nama" 
+                                pattern="[A-Za-z]+" title="Hanya hurus saja!"
+                                required
+                            >
                         </div>
                         <div class="mb-4">
-                            <label class="block text-gray-300 text-sm font-bold mb-2" for="password">
+                            <label 
+                                class="block text-gray-300 text-sm font-bold mb-2" 
+                                for="submitAmount"
+                            >
                                 Jumlah Tamu
                             </label>
-                            <input class="shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="tamu" type="tamu" placeholder="1 - 999">
+                            <input 
+                                class="shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" 
+                                id="submitAmount" type="number" 
+                                placeholder="1 - 999" 
+                                min="1" 
+                                required
+                            >
                             <p class="text-gray-300 text-xs italic">Isi dengan angka sesuai jumlah.</p>
                         </div>
                         <div class="mb-6">
-                            <label class="block text-gray-300 text-sm font-bold mb-2" for="password">
+                            <label class="block text-gray-300 text-sm font-bold mb-2" for="submitNo">
                                 Nomer Whatsapp
                             </label>
-                            <input class="shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="tamu" type="tamu" placeholder="08*********">
+                            <input 
+                                class="shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" 
+                                id="submitNo" 
+                                type="number" 
+                                placeholder="08*********" 
+                                required
+                            >
                         </div>
                         <div class="w-full">
-                            <button class="bg-[#C38154] hover:bg-[#886148] text-white font-bold py-2 w-full rounded focus:outline-none focus:shadow-outline" type="button">
+                            <button 
+                                @click="pushDataSubmition"
+                                class="bg-[#C38154] hover:bg-[#886148] text-white font-bold py-2 w-full rounded focus:outline-none focus:shadow-outline" type="button">
                                 Kirim Reservasi Kehadiran
                             </button>
                         </div>
@@ -222,6 +246,11 @@
                 <img :src="FooterBanner3" alt="" class="absolute bottom-0 w-full">
                 <img :src="FooterBanner1" alt="" class="absolute bottom-0 w-full z-40">
             </div>
+            <div v-if="this.isShowAlert" class="custom-alert">
+                <div class="flex flex-row justify-evenly items-center">
+                    <p class="font-base-wedding">{{ alertMessage }}</p>
+                </div>
+            </div>
         </div>
     </div>
 </template>
@@ -240,7 +269,7 @@ import FooterBanner2 from '../assets/footer-banner2.webp';
 import FooterBanner3 from '../assets/footer-banner3.webp';
 
 import { Modal } from 'flowbite'
-import {getDatabase, ref, push, onValue} from 'firebase/database';
+import {getDatabase, ref, push, onValue, get} from 'firebase/database';
 
 export default {
     name: 'Page5',
@@ -276,7 +305,9 @@ export default {
                     kirimHadiah: 'Kirim Hadiah',
                     dataAddress: 'Sidobasuki, RT/RW 021/011, Desa Bumi Agung, Kec. Tegineneng , Pesawaran, Lampung.'
                 }
-            ]
+            ],
+            alertMessage: "",
+            isShowAlert: false,
         }
     },
 
@@ -370,17 +401,75 @@ export default {
             const database = getDatabase();
             const dataRef = ref(database, 'dataInvitation/invitationForm');
 
-            push(dataRef, data).then(() => {
-                console.log('data success save to firebase');
+            if(namaInput.value === '' || ucapanInput.value === '' || kehadiranInput.value === '') {
+                this.alertMessage = 'Harap dilangkapi ya 🙏';
+            } else {
+                push(dataRef, data).then(() => {
+                    console.log('data success save to firebase');
 
-                form.reset();
-            }).catch((e) => {
-                console.log('error saving data to firebase',e);
-            });
-
+                    form.reset();
+                }).catch((e) => {
+                    console.log('error saving data to firebase',e);
+                });
+                this.alertMessage = 'Terimakasih atas ucapannya 😊';
+            }
+            this.isShowAlert = true;
             this.getData();
+            setTimeout(() => {
+                this.isShowAlert = false;
+            }, 3000)
+        },
+
+        pushDataSubmition() {
+            const submitForm = document.getElementById('mySubmitionForm');
+            const submitNameInput = document.getElementById('submitName');
+            const submitAmountInput = document.getElementById('submitAmount');
+            const submitNoInput = document.getElementById('submitNo');
+
+            const submitFormName = submitNameInput.value;
+            const submitFormAmount = submitAmountInput.value;
+            const submitFormNo = submitNoInput.value;
+
+            const dataSubmition =  {
+                formName: submitFormName,
+                formAmount: submitFormAmount,
+                formFromNo: submitFormNo
+            }
+            
+            const dataSubmitionForm = getDatabase();
+            const submitRef = ref(dataSubmitionForm, 'dataSubmition/submitionForm');
+
+            if(submitNameInput.value === '' || submitAmountInput.value === '' || submitNoInput.value === '') {
+                this.alertMessage = 'Harap dilengkap ya 🙏';
+            } else {
+                    push(submitRef, dataSubmition).then(() => {
+                    submitForm.reset();
+                }).catch((e) => {
+                    console.log('error to push firebase', e);
+                });
+                this.alertMessage = 'Terimakasih atas kehadirannya 😊';
+            }
+            this.isShowAlert = true;
+            setTimeout(() => {
+                this.isShowAlert = false;
+            }, 3000)            
         }
     }
 }
 
 </script>
+
+<style>
+.custom-alert {
+    width: 270px;
+    background-color: #e3e9d2;
+    padding: 5px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 50px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+}
+</style>
