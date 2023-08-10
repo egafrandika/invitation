@@ -118,7 +118,7 @@ export default {
                     date: '17',
                     year: '2023',
                     time: '14.00 WIB Selesai',
-                    street: 'Bandung Ciwiday',
+                    street: 'Bandung Ciwiday - Kawah Putih',
                     youtube: 'Lihat Video'
                 }
             ],

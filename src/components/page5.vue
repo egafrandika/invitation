@@ -247,7 +247,7 @@
                 <img :src="FooterBanner1" alt="" class="absolute bottom-0 w-full z-40">
             </div>
             <div v-if="this.isShowAlert" class="custom-alert">
-                <div class="flex flex-row justify-evenly items-center">
+                <div v-motion-pop class="flex flex-row justify-evenly items-center">
                     <p class="font-base-wedding">{{ alertMessage }}</p>
                 </div>
             </div>
@@ -440,7 +440,7 @@ export default {
             const submitRef = ref(dataSubmitionForm, 'dataSubmition/submitionForm');
 
             if(submitNameInput.value === '' || submitAmountInput.value === '' || submitNoInput.value === '') {
-                this.alertMessage = 'Harap dilengkap ya 🙏';
+                this.alertMessage = 'Harap dilengkapi ya 🙏';
             } else {
                     push(submitRef, dataSubmition).then(() => {
                     submitForm.reset();
