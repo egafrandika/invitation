@@ -194,7 +194,7 @@
                                 Kirim
                             </button>
                         </div>
-                        <div class="overflow-y-auto h-80">
+                        <div class="overflow-y-auto h-fit max-h-80">
                             <div class="w-full text-start flex flex-row space-x-2" v-for="(rec, index) in record" :key="index">
                                 <div class="bg-[#4a2e1c] p-1 mt-1 max-sm:p-1 rounded-full h-fit w-fit">
                                     <img :src="profile" alt="" class="rounded-full max-w-[20px]">
@@ -219,7 +219,7 @@
                                         <v-icon name="gi-alarm-clock" scale="0.8" fill="white"/>
                                         <h1 class="text-[10px] text-slate-200 py-1">{{ rec.timeCreated }} WIB</h1>
                                     </div>
-                                    <span class="font-base-wedding max-sm:text-[12px]">{{ rec.ucapan }}</span>
+                                    <p class="font-base-wedding max-sm:text-[12px] pb-2">{{ rec.ucapan }}</p>
                                 </div>
                             </div>
                         </div>
@@ -361,7 +361,6 @@ export default {
                     minute: '2-digit',
                     second: '2-digit'
                 };
-                console.log("Records before sorting:", this.record);
                 this.record = records.map(record => {
                     const timestamp = new Date(record.timeCreated);
                     return {
