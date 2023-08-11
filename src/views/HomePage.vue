@@ -21,7 +21,6 @@ import Page3 from '../components/page3.vue';
 import Page4 from '../components/page4.vue';
 import Page5 from '../components/page5.vue';
 import Page6 from '../components/page6.vue';
-import FloatingButton from '../components/floating-btn.vue'
 import backgroundMusic from '../assets/lagujawa.mp3';
 
 export default{
@@ -33,8 +32,7 @@ export default{
         Page3,
         Page4,
         Page5,
-        Page6,
-        FloatingButton
+        Page6
     },
 
     data() {
