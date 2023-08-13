@@ -5,7 +5,7 @@
                 <img :src="img" class="absolute rotate-180 w-full">
             </div>
             <div class="py-40 w-80 text-center mx-auto">
-                <h1 v-motion-slide-visible-bottom class="font-base-wedding py-10 text-lg">Besar harapan kami Bapak/Ibu dapat menghadiri acara pernikahan kami</h1>
+                <h1 v-motion-slide-visible-bottom class="font-four-wedding py-10 text-lg">Besar harapan kami Bapak/Ibu dapat menghadiri acara pernikahan kami</h1>
                 <img v-motion-pop-visible :src="Image1" alt="image.page6" class="rounded-full border-[10px] border-[#442B1B]">
                 <h1 v-motion-slide-visible-right class="pt-10 font-base-wedding">Hormat Kami</h1>
                 <h1 v-motion-slide-visible-left class="py-2 text-[40px] font-four-wedding">Dika & Ega</h1>

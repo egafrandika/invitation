@@ -100,19 +100,19 @@ export default {
             VideoMp4,
             items: [
                 {
-                    title1: 'Ijap Kabul',
-                    day: 'SABTU',
+                    title1: 'Ijab Qabul',
+                    day: 'KAMIS',
                     month: 'Agustus',
                     date: '31',
                     year: '2023',
-                    time: '12.00 WIB Selesai',
-                    street: 'Jl.Tegineneng',
+                    time: '09.00 WIB Selesai',
+                    street: 'Tegineneng - Sidobasuki',
                     location: 'Petunjuk Arah'
                 }
             ],
             prewedding: [
                 {
-                    title1: 'Preweding',
+                    title1: 'Prewedding',
                     day: 'SABTU',
                     month: 'Juni',
                     date: '17',
@@ -125,13 +125,13 @@ export default {
             events: [
                 {
                     title1: 'Hiburan',
-                    day: 'SABTU',
-                    month: 'Juni',
-                    date: '17',
+                    day: 'KAMIS',
+                    month: 'Agustus',
+                    date: '31',
                     year: '2023',
                     time: 'SIANG - MALAM',
-                    jam: '10.00WIB - 22.00WIB',
-                    hiburan: 'CAMPURSARI ASRI',
+                    jam: '09.00 WIB - 22.00 WIB',
+                    hiburan: 'CAMPURSARI'
                 }
             ],
             images: [

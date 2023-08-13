@@ -4,7 +4,7 @@
             <img :src="Tirai" alt="header" class="w-full fixed-top z-50">
         </div>
         <div class="text-wrapper">
-            <h1 v-motion-pop class="text-center text-[20px] font-medium p-20 max-sm:p-5 mx-auto max-sm:w-60 font-base-wedding text-gray-900">
+            <h1 v-motion-pop class="text-center text-[20px] font-medium p-20 max-sm:p-5 mx-auto max-sm:w-60 font-four-wedding text-gray-900">
                 We invited you to celebrate our Wedding Ceremony
             </h1>
         </div>

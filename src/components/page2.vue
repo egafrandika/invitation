@@ -11,7 +11,8 @@
                 <img :src="Image1" alt="image1" class="object-cover h-full w-full rounded-[200px]">
             </div>
             <div class="flex flex-col justify-items-end text-[#ddcaca] pl-6 pr-6" v-for="item in Girl">
-                <h1 v-motion-slide-visible-right class="font-second-wedding text-[50px] text-right">{{ item.girlTitle }}</h1>
+                <h1 v-motion-slide-visible-right class="font-second-wedding text-[60px] text-right">Ega</h1>
+                <h1 v-motion-slide-visible-right class="text-[10px] text-right mb-2">{{ item.girlTitle }}</h1>
                 <div v-motion-slide-visible-right class="flex flex-col text-[15px] font-base-wedding text-right max-w-xs">
                     <span class="pb-2">{{ item.desc }}</span>
                     <div v-for="url in instagramUrl" @click="goGirlInstagram(url.girlInstagram)" class="flex items-center bg-[#442B1B] w-fit px-4 py-1 rounded-md self-end">
@@ -38,7 +39,8 @@
                 <img :src="Image4" alt="image1" class="object-cover h-full w-full rounded-[200px]">
             </div>
             <div class="flex flex-col justify-items-end text-[#ddcaca] px-6" v-for="item in Man">
-                <h1 v-motion-slide-visible-left class="font-second-wedding text-[50px]">{{ item.manTitle }}</h1>
+                <h1 v-motion-slide-visible-right class="text-start font-second-wedding text-[60px]">Dika</h1>
+                <h1 v-motion-slide-visible-left class="text-start text-[10px] mb-2">{{ item.manTitle }}</h1>
                 <div v-motion-slide-visible-left class="flex flex-col text-[15px] font-base-wedding max-w-xs">
                     <span class="pb-2">{{ item.desc }}</span>
                     <div v-for="url in instagramUrl" @click="goManInstagram(url.manInstagram)" class="flex items-center justify-start bg-[#442B1B] w-fit px-4 py-1 rounded-md">
@@ -93,16 +95,16 @@ export default {
             ],
             Man: [
                 {
-                    manTitle: 'Dika',
-                    desc: 'Putra ketiga Bapak Sutarman & Ibu Suharyani',
+                    manTitle: 'Ega Frandika B.Sc.IT',
+                    desc: 'Putra ketiga Bpk Sutarman & Ibu Suharyani',
                     media: 'instagram',
                     text: 'Doakan agar menjadi keluarga sakinah mawadah maromah'
                 }
             ],
             Girl: [
                 {
-                    girlTitle: 'Ega',
-                    desc: 'Putri ketiga Bapak Dana & Ibu Sugiati',
+                    girlTitle: 'Tri Ega Septiana S.Kep., Ners',
+                    desc: 'Putri ketiga Bpk Sukadana & Ibu Sugiati',
                     media: 'instagram',
                     text: 'Doakan agar menjadi keluarga sakinah mawadah maromah'
                 }
