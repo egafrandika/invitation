@@ -32,16 +32,9 @@
                 <video :src="VideoMp4" autoplay loop playsinline muted class="object-cover h-full w-full rounded-[200px] brightness-[.5]"/>
                 <div v-for="event in prewedding" class="absolute w-full top-0 py-6 text-center font-second-wedding text-[40px] text-[#e4c8b5]">
                     <h1>{{ event.title1 }}</h1>
-                    <img :src="PohonWayang" class="w-[130px] mx-auto">
-                    <span class="font-mono text-xl">{{ event.day }}</span>
-                    <div class="flex font-sans tracking-wider justify-center border-[2px] border-x-0 items-center">
-                        <h1 class="px-2 text-[20px]">{{ event.month }}</h1>
-                        <h1 class="px-2">{{ event.date }}</h1>
-                        <h1 class="px-2 text-[20px]">{{ event.year }}</h1>
-                    </div>
+                    <img :src="PohonWayang" class="w-[190px] mx-auto">
                     <div class="py-4">
-                        <h1 class="font-mono text-[12px]">{{ event.time }}</h1>
-                        <h1 class="font-mono text-[12px] py-1">{{ event.street }}</h1>
+                        <h1 class="font-mono text-[12px] py-2 mb-1">{{ event.street }}</h1>
                         <div @click="VideoYoutube" class="bg-[#442B1B] w-fit mx-auto py-2 px-2 rounded-md items-center flex cursor-pointer space-x-1">
                             <v-icon name="md-slowmotionvideo-sharp" animation="ring" scale="1.5" fill="white"/>
                             <h1 class="font-mono text-[12px]">{{ event.youtube }}</h1>
