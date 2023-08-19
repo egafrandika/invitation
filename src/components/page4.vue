@@ -53,7 +53,7 @@
                     <div class="w-full col-span-1 row-span-1 md:col-span-2 md:row-span-2">
                         <img :src="Image16" alt="" class="inset-0 h-full w-full object-cover object-center rounded opacity-75 hover:opacity-100">
                     </div>
-                    <div class="w-full col-span-1 md:row-span-2">
+                    <div class="w-full col-span-1 md:row-span-1">
                         <img :src="Image17" alt="" class="inset-0 h-full w-full object-cover object-center rounded opacity-75 hover:opacity-100">
                     </div>
                     <div class="w-full">
