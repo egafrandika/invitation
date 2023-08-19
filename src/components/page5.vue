@@ -38,8 +38,8 @@
                                                 <div class="mx-auto">
                                                     <div class="pt-2 flex flex-col w-fit font-mono text-center mx-auto text-black">
                                                         <h1 class="text-[20px]">{{ bank.bankname }}</h1>
-                                                        <h1 class="text-[20px]">{{ bank.number }}</h1>
-                                                        <h1 class="text-[20px] pb-10">{{ bank.nameBank }}</h1>
+                                                        <h1 class="text-[1rem]">{{ bank.number }}</h1>
+                                                        <h1 class="text-[1rem] pb-10">{{ bank.nameBank }}</h1>
                                                     </div>
                                                 </div>
                                             </div>
