@@ -294,7 +294,7 @@ export default {
                 FooterBanner1,
             ],
             banks: [
-                {logo: BcaImage, bankname: 'Rekening Bca', number: '8421256195', nameBank: 'Ega Frandika'},
+                {logo: BcaImage, bankname: 'Rekening Bca', number: '8421256195(Ega Frandika)', nameBank: '8761257081(Tri Ega Septiana)'},
                 {logo: MandiriImage, bankname: 'Rekening Mandiri', number: '1560018055899', nameBank: 'Tri Ega Septiana'},
             ],
             gifts: [
